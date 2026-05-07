@@ -38,3 +38,7 @@ next-env.d.ts
 # screenshots
 /screenshots
 .env.local
+
+# project-specific
+CLAUDE.md
+screenshot.mjs
