@@ -1,0 +1,123 @@
+import { StorySection } from "./types";
+
+export const sections: StorySection[] = [
+  {
+    id: "hero",
+    index: 0,
+    eyebrow: "Inspiration4",
+    headline: "Body in Orbit",
+    body: "Four civilians orbited Earth for three days. Their biology came back in layers.",
+    callout: "",
+    phase: "hero",
+    activeDomainIds: [],
+    scrollVh: 100,
+  },
+  {
+    id: "measured",
+    index: 1,
+    eyebrow: "Data Coverage",
+    headline: "These dots are not a livestream.",
+    body: "Each data point represents a specific biospecimen collected at a specific timepoint. Some measurements happened during flight (FD1, FD2, FD3). Most happened before or after. The gaps are real.",
+    callout:
+      "Telomere length is the only domain with direct in-flight measurement via dried blood spots.",
+    phase: "measured",
+    activeDomainIds: ["immune", "oxidative", "energy", "telomere", "microbiome"],
+    scrollVh: 140,
+  },
+  {
+    id: "baseline",
+    index: 2,
+    eyebrow: "Understanding the Scale",
+    headline: "Baseline means this astronaut before flight.",
+    body: "Perturbation scores (0-3) are communication scores, not clinical severity scores. They represent how far molecular markers shifted from each crew member's own pre-flight baseline. A score of 3 does not mean danger. It means strong multi-marker signal.",
+    callout:
+      "We use preferred terms: signal, shift, perturbation, baseline, recovery. We avoid: diagnosis, disease, abnormal, dangerous.",
+    phase: "baseline",
+    activeDomainIds: [],
+    scrollVh: 100,
+  },
+  {
+    id: "immune",
+    index: 3,
+    eyebrow: "Immune Regulation",
+    headline: "The strongest post-flight signal was immune regulation.",
+    body: "18 cytokines, chemokines, and growth factors showed significant changes (q<0.05). FOXP3+ regulatory T cells activated at R+1. MHC class I genes (HLA-A, HLA-B, HLA-C, B2M) remained suppressed through R+194. This is the largest multi-marker perturbation we observed.",
+    callout:
+      "These are molecular signals, not signs of illness or immune dysfunction.",
+    phase: "r_plus_1",
+    activeDomainIds: ["immune"],
+    scrollVh: 120,
+  },
+  {
+    id: "oxidative",
+    index: 4,
+    eyebrow: "Oxidative Response",
+    headline: "Some stress signals arrived with their own counter-signal.",
+    body: "Oxidative stress markers shifted in both plasma and extracellular vesicle proteins (EVPs). Inosine and taurine increased significantly. But the recovery was layered: 93% of EVP markers returned toward baseline by R+82, while 73% of plasma markers remained perturbed.",
+    callout:
+      "Perturbation and compensation can coexist. This is not evidence of cellular injury.",
+    phase: "r_plus_1",
+    activeDomainIds: ["oxidative"],
+    scrollVh: 100,
+  },
+  {
+    id: "energy",
+    index: 5,
+    eyebrow: "Energy Metabolism",
+    headline: "Energy pathways shifted inside immune cells.",
+    body: "OXPHOS (oxidative phosphorylation) pathway enrichment appeared in single-cell data from immune cells. This is pathway-level signal, not individual marker measurements. The perturbation appeared at R+1 and partially recovered through R+82.",
+    callout:
+      "Pathway shifts do not indicate mitochondrial disease or failure.",
+    phase: "r_plus_1",
+    activeDomainIds: ["energy"],
+    scrollVh: 90,
+  },
+  {
+    id: "telomeres",
+    index: 6,
+    eyebrow: "Telomere Dynamics",
+    headline: "The most tempting story is the one to handle most carefully.",
+    body: "All 4 crew members showed telomere elongation during flight (P<0.001), measured directly from dried blood spots collected in orbit. After landing, 3 out of 4 showed shortening (P<0.02). Whole-genome sequencing and clonal hematopoiesis panels showed no significant genome instability.",
+    callout:
+      "This is not evidence of rejuvenation or damage. It is a bidirectional biological signal.",
+    phase: "inflight",
+    activeDomainIds: ["telomere"],
+    scrollVh: 120,
+  },
+  {
+    id: "microbiome",
+    index: 7,
+    eyebrow: "Microbiome Dynamics",
+    headline: "The body was not the only ecosystem in orbit.",
+    body: "Skin and oral microbiota shifted consistently during and after flight (FD2, FD3, R+1). Microbial gene expression patterns correlated with immune cell activity. Spatial transcriptomics of skin tissue revealed 95 upregulated and 121 downregulated genes.",
+    callout:
+      "Microbiome shifts are not signs of infection or harmful exposure.",
+    phase: "inflight",
+    activeDomainIds: ["microbiome"],
+    scrollVh: 90,
+  },
+  {
+    id: "recovery",
+    index: 8,
+    eyebrow: "Recovery Patterns",
+    headline: "The body did not recover as one object.",
+    body: "93% of extracellular vesicle protein markers returned toward baseline by R+82. But 73% of plasma protein markers remained perturbed at the same timepoint. Different molecular compartments recovered at different rates. This is the climax: recovery is not a single trajectory.",
+    callout:
+      "Layered recovery means we cannot use a single timeline to describe all biological systems.",
+    phase: "recovery",
+    activeDomainIds: ["immune", "oxidative", "energy", "telomere", "microbiome"],
+    scrollVh: 160,
+  },
+  {
+    id: "limits",
+    index: 9,
+    eyebrow: "What This Is Not",
+    headline: "A responsible visualization knows where to stop.",
+    body: "This is not a diagnosis. This is not medical clearance. This is not a prediction of future health outcomes. This is a baseline-relative molecular report built from 8 peer-reviewed papers published in Nature Communications, Nature, Nature Microbiology, and Precision Clinical Medicine.",
+    callout:
+      "Every claim in this report is traceable to a specific assay, timepoint, sample type, and source publication.",
+    phase: "limits",
+    activeDomainIds: [],
+    scrollVh: 110,
+  },
+];
