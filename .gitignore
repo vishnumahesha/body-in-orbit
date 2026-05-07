@@ -41,4 +41,5 @@ next-env.d.ts
 
 # project-specific
 CLAUDE.md
+.claude/
 screenshot.mjs

@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "screenshot": "node screenshot.mjs",
-    "screenshot:full": "node screenshot.mjs http://localhost:3000 full",
+    "screenshot": "node scripts/screenshot.mjs",
+    "screenshot:full": "node scripts/screenshot.mjs http://localhost:3000 full",
     "audit:claims": "tsx scripts/auditClaims.ts"
   },
   "dependencies": {
