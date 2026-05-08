@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { MissionStart } from "@/components/mission/MissionStart";
+import { SafeMount } from "@/components/SafeMount";
 import { CrewProvider, useCrew } from "@/lib/crewContext";
 import { CrewSelector } from "@/components/crew/CrewSelector";
 import { AnimatedRadialChart } from "@/components/radial/AnimatedRadialChart";
@@ -84,7 +85,19 @@ function HomeContent() {
   return (
     <div className="min-h-screen bg-[#000000]">
       <div className="fixed inset-0 w-full h-screen pointer-events-none">
-        <InterstellarScene className="w-full h-full" />
+        <SafeMount
+          fallback={
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(900px 600px at 50% 30%, rgba(6,182,212,0.10), transparent 60%), radial-gradient(700px 500px at 70% 90%, rgba(139,92,246,0.08), transparent 60%), #000",
+              }}
+            />
+          }
+        >
+          <InterstellarScene className="w-full h-full" />
+        </SafeMount>
       </div>
 
       <div className="relative z-10">
