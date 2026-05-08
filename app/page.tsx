@@ -1,5 +1,7 @@
 "use client";
 
+import { HeroBackground } from "@/components/HeroBackground";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -73,6 +75,7 @@ function HomeContent() {
 
   return (
     <div className="min-h-screen bg-[#000000]">
+        <HeroBackground />
       
 
       <div className="relative z-10">
