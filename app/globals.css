@@ -91,3 +91,49 @@ pre {
     font-family: var(--font-ibm-plex-mono), monospace;
   }
 }
+
+@media print {
+  html::before {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  body > * {
+    visibility: hidden !important;
+  }
+  #biobrief-printable,
+  #biobrief-printable * {
+    visibility: visible !important;
+  }
+  #biobrief-printable {
+    position: absolute !important;
+    inset: 0 !important;
+    margin: 0 !important;
+    padding: 24mm 18mm !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+  }
+  #biobrief-printable * {
+    color: #0f172a !important;
+    background: transparent !important;
+    border-color: #cbd5e1 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+  #biobrief-printable .text-\[\#06B6D4\],
+  #biobrief-printable [style*="color: rgb(6, 182, 212)"] {
+    color: #0e7490 !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}
