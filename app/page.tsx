@@ -11,6 +11,7 @@ import { ClaimCourt } from "@/components/claim/ClaimCourt";
 import { MonitoringPlanner } from "@/components/monitoring/MonitoringPlanner";
 import { VoiceDebrief } from "@/components/voice/VoiceDebrief";
 import { PrintableBioBrief } from "@/components/print/PrintableBioBrief";
+import { EvidenceDrawer } from "@/components/evidence/EvidenceDrawer";
 import { crew } from "@/data/crew";
 import type { DomainId } from "@/data/types";
 
@@ -122,6 +123,13 @@ export default function Home() {
             phase="recovery"
             activeDomainId={activeDomainId}
             onSelectDomain={setActiveDomainId}
+          />
+
+          {/* Evidence Drawer */}
+          <EvidenceDrawer
+            activeDomainId={activeDomainId}
+            phase="recovery"
+            onClose={() => setActiveDomainId(null)}
           />
         </motion.section>
 
