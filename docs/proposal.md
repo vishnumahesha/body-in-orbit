@@ -1,6 +1,6 @@
 # Body in Orbit: A Post-flight Recovery Review for Astronaut Molecular Data
 
-## Team 4 — Vishnu Mahesha
+## Team 3 — Vishnu Mahesha
 Rouse High School / Alpha X Program
 
 ---
