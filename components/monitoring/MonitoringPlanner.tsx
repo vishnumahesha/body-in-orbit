@@ -4,15 +4,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { DomainId } from "@/data/types";
 
-interface MonitoringPriority {
-  domainId: DomainId;
-  label: string;
-  color: string;
-  priority: number;
-  rationale: string;
-  keyMarkers: string[];
-}
-
 const missionProfiles = {
   "3day": {
     label: "3-Day Mission",

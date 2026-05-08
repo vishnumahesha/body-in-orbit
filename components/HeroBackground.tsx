@@ -2,9 +2,25 @@
 
 import { useEffect, useRef } from "react";
 
+interface UnicornStudioScene {
+  destroy?: () => void;
+}
+
+interface UnicornStudioAddScene {
+  addScene: (config: {
+    elementId: string;
+    projectId: string;
+    scale?: number;
+    dpi?: number;
+    fps?: number;
+    lazyLoad?: boolean;
+    production?: boolean;
+  }) => Promise<UnicornStudioScene>;
+}
+
 export function HeroBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<any>(null);
+  const sceneRef = useRef<UnicornStudioScene | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -14,7 +30,9 @@ export function HeroBackground() {
       "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.12/dist/unicornStudio.umd.js";
     script.onload = async () => {
       try {
-        const scene = await (window as any).UnicornStudio.addScene({
+        const us = (window as Window & { UnicornStudio?: UnicornStudioAddScene }).UnicornStudio;
+        if (!us) return;
+        const scene = await us.addScene({
           elementId: "unicorn-bg",
           projectId: "f930H2fgrDSWGwbXCGWv",
           scale: 0.5,

@@ -127,7 +127,7 @@ export function ClaimCourt() {
                   Astronaut-Facing Claim
                 </div>
                 <p className="font-inter text-xl text-[#F8FAFC] leading-relaxed mb-8">
-                  "{currentClaim.claim}"
+                  &quot;{currentClaim.claim}&quot;
                 </p>
 
                 <div className="space-y-3">

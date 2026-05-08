@@ -1,4 +1,16 @@
 "use client";
+
+interface UnicornStudioAPI {
+  isInitialized: boolean;
+  init: () => void;
+}
+
+declare global {
+  interface Window {
+    UnicornStudio?: UnicornStudioAPI;
+  }
+}
+
 import { useEffect, useRef, useState } from "react";
 
 let sdkLoaded = false;
@@ -12,7 +24,7 @@ function loadSDK(): Promise<void> {
     script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.12/dist/unicornStudio.umd.js";
     script.onload = () => {
       sdkLoaded = true;
-      const UnicornStudio = (window as any).UnicornStudio;
+      const UnicornStudio = window.UnicornStudio;
       if (UnicornStudio && typeof UnicornStudio.init === "function") {
         UnicornStudio.init();
       }
@@ -38,7 +50,7 @@ export function UnicornScene({ projectId, className, fallbackLabel }: {
   useEffect(() => {
     loadSDK()
       .then(() => {
-        const UnicornStudio = (window as any).UnicornStudio;
+        const UnicornStudio = window.UnicornStudio;
         if (UnicornStudio && typeof UnicornStudio.init === "function") {
           UnicornStudio.init();
         }
