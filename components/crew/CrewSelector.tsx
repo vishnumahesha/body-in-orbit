@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useCrew } from "@/lib/crewContext";
+import { UnicornScene } from "./UnicornScene";
 
 const colorByDomainId: Record<string, string> = {
   immune: "#22D3EE",
@@ -9,6 +10,13 @@ const colorByDomainId: Record<string, string> = {
   energy: "#60A5FA",
   telomere: "#A78BFA",
   microbiome: "#2DD4BF",
+};
+
+const portraitMap: Record<string, string> = {
+  C001: "cNfmqREQbl0Ef3oTF0Kb",
+  C002: "6JulkxqiM1AkcRNtpiN8",
+  C003: "euUnpkad5Ae5ctmf5KTj",
+  C004: "32Fm5JxcdDIPZV5CDlyd",
 };
 
 function CrewBadge({ id, isActive }: { id: string; isActive: boolean }) {
@@ -68,11 +76,12 @@ export function CrewSelector() {
         </AnimatePresence>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
         {allProfiles.map((p, i) => {
           const isActive = p.id === crewId;
           const topDomain = p.monitoringPriority[0];
           const accent = colorByDomainId[topDomain] ?? "#06B6D4";
+          const portraitId = portraitMap[p.id];
 
           return (
             <motion.button
@@ -97,6 +106,15 @@ export function CrewSelector() {
                   opacity: isActive ? 0.9 : 0.25,
                 }}
               />
+
+              {portraitId && (
+                <div className="aspect-[3/4] w-full overflow-hidden rounded-lg mb-4 bg-black">
+                  <UnicornScene
+                    projectId={portraitId}
+                    fallbackLabel={p.displayLabel}
+                  />
+                </div>
+              )}
 
               <div className="flex items-center justify-between mb-4">
                 <CrewBadge id={p.displayLabel} isActive={isActive} />
