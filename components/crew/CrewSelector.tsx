@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { CrewMember } from "@/data/types";
+import { UnicornScene } from "./UnicornScene";
 
 interface CrewSelectorProps {
   crew: CrewMember[];
@@ -9,11 +10,19 @@ interface CrewSelectorProps {
   onSelect: (id: string) => void;
 }
 
+const portraitMap: Record<string, string> = {
+  crew1: "cNfmqREQbl0Ef3oTF0Kb",
+  crew2: "6JulkxqiM1AkcRNtpiN8",
+  crew3: "euUnpkad5Ae5ctmf5KTj",
+  crew4: "32Fm5JxcdDIPZV5CDlyd",
+};
+
 export function CrewSelector({ crew, selectedId, onSelect }: CrewSelectorProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto px-6 mb-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto px-6 mb-16">
       {crew.map((member, index) => {
         const isSelected = selectedId === member.id;
+        const projectId = portraitMap[member.id];
         return (
           <motion.button
             key={member.id}
@@ -31,7 +40,7 @@ export function CrewSelector({ crew, selectedId, onSelect }: CrewSelectorProps) 
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className={`
-              relative p-6 rounded-xl border-2 transition-all duration-300
+              relative p-4 rounded-xl border-2 transition-all duration-300
               ${isSelected
                 ? "bg-[#06B6D4]/10 border-[#06B6D4] shadow-[0_0_30px_rgba(6,182,212,0.3)]"
                 : "bg-[#05070F] border-[#1E293B] hover:border-[#334155]"
@@ -49,6 +58,15 @@ export function CrewSelector({ crew, selectedId, onSelect }: CrewSelectorProps) 
               />
             )}
 
+            {/* Portrait */}
+            <div className="aspect-[3/4] w-full overflow-hidden rounded-lg mb-4">
+              <UnicornScene
+                projectId={projectId}
+                fallbackLabel={member.displayLabel}
+              />
+            </div>
+
+            {/* Crew metadata */}
             <div className="font-mono text-xs uppercase tracking-wider text-[#64748B] mb-2">
               {member.displayLabel}
             </div>
