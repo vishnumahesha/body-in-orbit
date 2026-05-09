@@ -268,7 +268,7 @@ export function SampleCoverageMatrix() {
               exit={{ opacity: 0 }}
               className="font-mono text-[11px] text-[#475569]"
             >
-              Tap, hover, or focus any cell to inspect its dataset, comparison method, and caution.
+              Each cell shows whether that dataset was collected at that timepoint. Teal = collected. Purple = differential anchor (reference comparison). Dashed = not collected.
             </motion.p>
           )}
         </AnimatePresence>

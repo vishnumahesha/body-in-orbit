@@ -160,6 +160,7 @@ function HomeContent() {
           </Section>
 
           {/* Section 5: Evidence drawers */}
+          <div id="evidence-receipts">
           <Section eyebrow="05 · Evidence receipts">
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-3">
               Every domain card opens its receipts.
@@ -171,6 +172,7 @@ function HomeContent() {
             </p>
             <EvidenceDrawers />
           </Section>
+          </div>
 
           {/* Section 6: Sample coverage matrix */}
           <Section eyebrow="06 · Coverage matrix">
@@ -232,7 +234,7 @@ function HomeContent() {
               <button
                 onClick={() =>
                   typeof window !== "undefined" &&
-                  window.scrollTo({ top: 0, behavior: "smooth" })
+                  document.getElementById("evidence-receipts")?.scrollIntoView({ behavior: "smooth" })
                 }
                 className="bg-white/5 border border-[#1E293B] text-[#94A3B8] px-6 py-3 rounded-xl font-mono text-sm hover:bg-cyan-500/10 hover:border-[#94A3B8] transition-colors"
               >
