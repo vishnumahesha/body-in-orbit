@@ -64,7 +64,7 @@ export const crew: Record<string, CrewProfile> = {
     displayLabel: "C003",
     callsign: "C003 · PLT",
     ageBand: "Age band 45-54",
-    bioFocus: "Brief focus: genome / telomere context",
+    bioFocus: "Brief focus: telomere dynamics context",
     bioFocusBlurb:
       "Telomeres (protective caps on the ends of your DNA) elongated during flight and shortened after; the bidirectional pattern appeared in all four crew members and was most pronounced here.",
     signature:
