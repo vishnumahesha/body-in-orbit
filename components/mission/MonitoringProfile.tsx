@@ -52,7 +52,7 @@ export function MonitoringProfile() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-inter text-lg text-[#94A3B8] mb-12"
         >
-          Five biological domains. Each reported as a monitoring signal, not a clinical risk score.
+          Five biological domains. Each reported as a monitoring signal, not a clinical communication score.
         </motion.p>
       </div>
 

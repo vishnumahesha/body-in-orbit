@@ -101,7 +101,7 @@ export const storySlides: StorySlide[] = [
         { title: "IMMUNE REGULATION", measures: "Cytokines, PBMCs, urine inflammation, CBC.", matters: "Shows monitoring-relevant shifts after flight.", cannot: "Illness, infection, or clinical vulnerability." },
         { title: "OXIDATIVE RESPONSE", measures: "Plasma metabolites and proteins.", matters: "Tracks cellular stress signals across recovery.", cannot: "Damage, disease state, or clinical severity." },
         { title: "ENERGY METABOLISM", measures: "Cellular energy and mitochondrial pathways.", matters: "Reflects shifts in core metabolism.", cannot: "Fitness, fatigue, or medical conclusions." },
-        { title: "GENOME REGULATION", measures: "RNA, chromatin, m6A, telomere context.", matters: "Captures gene-activity shifts across phases.", cannot: "Inherited risk or clinical genetics." },
+        { title: "TELOMERE DYNAMICS", measures: "Telomere length dynamics, RNA, chromatin, and m6A context.", matters: "Captures genome-adjacent regulation and recovery signals across phases.", cannot: "Rejuvenation, inherited risk, or clinical genetics." },
         { title: "MICROBIOME DYNAMICS", measures: "Crew swabs, stool, skin, capsule surfaces.", matters: "Tracks microbial shifts on body and craft.", cannot: "Pathogen presence or infection risk." },
       ],
     },
@@ -159,14 +159,14 @@ export const storySlides: StorySlide[] = [
     textSide: "left",
     headline: ["Now the data becomes", "a crew debrief."],
     beats: [
-      "Body in Orbit organizes the mission record into five domains: immune regulation, oxidative response, energy metabolism, genome regulation, and microbiome dynamics.",
+      "Body in Orbit organizes the mission record into five domains: immune regulation, oxidative response, energy metabolism, telomere dynamics, and microbiome dynamics.",
       "For each crew member, the site explains what changed, what recovered, what needs monitoring, and what the data cannot prove.",
       "The result is a debrief a non-specialist can understand — with enough evidence boundaries for a scientist to trust.",
     ],
     extras: {
       kind: "question-stack",
       questions: [
-        "What does my biology say about my readiness for spaceflight?",
+        "What does my biology say about future mission planning?",
         "Which signals changed during or after the mission?",
         "Which domains should be monitored in orbit?",
         "How does my profile compare with other crew members?",

@@ -111,11 +111,19 @@ export function CrewSelector() {
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg mb-4 bg-black">
                   <Image
                     src={portraitId}
-                    alt={p.displayLabel}
+                    alt={`${p.publicName} (${p.displayLabel})`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover"
                   />
+                  <div className="absolute inset-x-0 bottom-0 px-3 pt-10 pb-3 pointer-events-none bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent">
+                    <div className="font-space-grotesk text-sm sm:text-base font-semibold text-white leading-tight truncate">
+                      {p.publicName}
+                    </div>
+                    <div className="font-mono text-[10px] tracking-[0.15em] text-cyan-400/80 mt-0.5 uppercase">
+                      {p.id} · {p.missionRole}
+                    </div>
+                  </div>
                 </div>
               )}
 
@@ -163,7 +171,7 @@ export function CrewSelector() {
       </div>
 
       <p className="font-mono text-[12px] text-[#64748B] max-w-2xl mt-6 leading-relaxed">
-        Crew cards are briefing views. Molecular evidence remains labeled by internal crew ID unless public identity mapping is verified in the source data.
+        Public names shown for mission context. Molecular evidence remains labeled by crew ID. C001 = Commander, C002 = Medical Officer, C003 = Pilot, C004 = Mission Specialist.
       </p>
 
       <AnimatePresence mode="wait">

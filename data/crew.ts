@@ -15,7 +15,7 @@ export interface CrewProfile extends CrewMember {
 export const crew: Record<string, CrewProfile> = {
   C001: {
     id: "C001",
-    publicName: "Crew Member C001",
+    publicName: "Jared Isaacman",
     missionRole: "Commander",
     displayLabel: "C001",
     callsign: "C001 · CDR",
@@ -37,7 +37,7 @@ export const crew: Record<string, CrewProfile> = {
   },
   C002: {
     id: "C002",
-    publicName: "Crew Member C002",
+    publicName: "Hayley Arceneaux",
     missionRole: "Medical Officer",
     displayLabel: "C002",
     callsign: "C002 · MED",
@@ -59,7 +59,7 @@ export const crew: Record<string, CrewProfile> = {
   },
   C003: {
     id: "C003",
-    publicName: "Crew Member C003",
+    publicName: "Dr. Sian Proctor",
     missionRole: "Pilot",
     displayLabel: "C003",
     callsign: "C003 · PLT",
@@ -70,7 +70,7 @@ export const crew: Record<string, CrewProfile> = {
     signature:
       "Telomere dynamics is the only domain in this brief with direct in-flight measurement via dried blood spots.",
     domainScoreOverrides: { telomere: 3, immune: 2, oxidative: 1 },
-    recoveryNote: "Telomeres elongated FD1-FD3 (flight days 1-3, P<0.001), shortened post-flight (P<0.02).",
+    recoveryNote: "Telomeres elongated during flight and shortened after landing; this is a bidirectional signal, not evidence of rejuvenation or damage.",
     monitoringPriority: ["telomere", "immune", "energy", "oxidative", "microbiome"],
     voiceLines: [
       "C003. Pilot. Telomeres got longer during flight. Three of four shortened after.",
@@ -81,7 +81,7 @@ export const crew: Record<string, CrewProfile> = {
   },
   C004: {
     id: "C004",
-    publicName: "Crew Member C004",
+    publicName: "Chris Sembroski",
     missionRole: "Mission Specialist",
     displayLabel: "C004",
     callsign: "C004 · SPC",

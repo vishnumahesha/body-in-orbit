@@ -22,7 +22,7 @@ export const personalDebriefs: Record<CrewId, DebriefEntry> = {
     comparison: "Your immune perturbation (shift from your own baseline) ranked highest among crew members at R+1.",
   },
   C002: {
-    readiness:  "Your oxidative baseline was within expected pre-flight range.",
+    readiness:  "Your oxidative baseline was within the observed crew baseline range.",
     risks:      "EVP and plasma oxidative markers diverged at R+1 (one day after landing); recovery happened in layers.",
     monitoring: "Plasma protein markers warranted monitoring through R+82 (~12 weeks after landing).",
     comparison: "Your oxidative recovery showed the clearest compartment split in the crew.",
