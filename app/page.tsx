@@ -108,9 +108,24 @@ function HomeContent() {
         <MissionQuestionsBar />
       </div>
 
+      <div className="relative z-10 max-w-7xl mx-auto px-6 mb-4 flex justify-end">
+        <Link
+          href="/mission-summary"
+          className="font-mono text-[10px] tracking-[0.25em] text-slate-500 hover:text-cyan-300 px-3 py-1.5 rounded-md border border-slate-800 hover:border-cyan-500/40 transition-colors"
+        >
+          ↺ REPLAY MISSION SUMMARY
+        </Link>
+      </div>
+
       <div className="relative z-10">
-        {/* Section 1: Crew Selector — centerpiece */}
-        <Section eyebrow="01 · Crew Selector">
+        {/* Section 1: Crew Selector */}
+        <Section eyebrow="01 · CREW DEBRIEF SELECTION">
+          <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-2">
+            Choose a crew member to load their biological debrief.
+          </h2>
+          <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-8 leading-relaxed">
+            Each profile is baseline-relative and evidence-labeled. These are research signals, not diagnoses.
+          </p>
           <div id="crew-sandbox">
             <CrewSelector />
           </div>
