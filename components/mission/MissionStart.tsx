@@ -25,7 +25,8 @@ export function MissionStart({ onBegin }: MissionStartProps) {
           transition={{ delay: 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="font-mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-[#06B6D4]/70 mb-8"
         >
-          INSPIRATION4 MOLECULAR DEBRIEF
+          INSPIRATION4 (THE 2021 FIRST ALL-CIVILIAN SPACEX MISSION) MOLECULAR
+          DEBRIEF
         </motion.div>
 
         {/* Main title */}
@@ -56,7 +57,7 @@ export function MissionStart({ onBegin }: MissionStartProps) {
           className="font-inter text-base sm:text-lg text-[#94A3B8]/80 max-w-lg leading-relaxed mb-14"
         >
           Before we send humans farther from Earth, we need to understand what
-          space changes inside the body.
+          space changes inside the body, one crew member at a time.
         </motion.p>
 
         {/* CTA Button */}

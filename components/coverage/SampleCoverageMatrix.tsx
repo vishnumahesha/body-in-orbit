@@ -82,6 +82,12 @@ export function SampleCoverageMatrix() {
           <h3 className="font-space-grotesk text-2xl md:text-3xl font-bold text-[#F8FAFC]">
             What was collected — and where the gaps live.
           </h3>
+          <p className="mt-3 max-w-3xl font-inter text-xs leading-relaxed text-[#94A3B8]">
+            Rows use OSD-XXX, the NASA Open Science Data Repository study ID. Mission
+            shorthand: L-92 to L-3 (92 to 3 days before launch), FD2-FD3 (days 2-3 of
+            the flight), R+1 (one day after landing), R+45 (~6 weeks after landing),
+            R+82 (~12 weeks after landing), and R+194 (~6 months after landing).
+          </p>
         </div>
         <div className="flex gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[#94A3B8]">
           <span className="flex items-center gap-2">

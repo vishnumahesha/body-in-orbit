@@ -28,7 +28,7 @@ const MISSIONS: MissionProfile[] = [
     weights: { immune: 1.0, oxidative: 0.85, telomere: 0.6, energy: 0.55, microbiome: 0.5 },
     cadence: "Pre · R+1 · R+45 · R+82 · R+194",
     recoveryWindow: "Six months of post-flight monitoring",
-    notes: "Inspiration4-class profile. Strongest signals appear post-flight; in-flight sampling limited to dried blood spots.",
+    notes: "Inspiration4 (the 2021 first all-civilian SpaceX mission) class profile. Strongest signals appear post-flight; in-flight sampling limited to dried blood spots.",
   },
   {
     id: "30d",
@@ -38,7 +38,7 @@ const MISSIONS: MissionProfile[] = [
     weights: { immune: 1.0, oxidative: 0.95, energy: 0.9, telomere: 0.85, microbiome: 0.7 },
     cadence: "Pre · weekly DBS · landing · R+30 · R+90 · R+180",
     recoveryWindow: "Twelve months of layered post-flight monitoring",
-    notes: "Mission length crosses the threshold where in-flight metabolic and telomere signals stop being inferable from short missions alone.",
+    notes: "Mission length crosses the threshold where in-flight metabolic and telomere (protective caps on the ends of your DNA) signals stop being inferable from short missions alone.",
   },
   {
     id: "180d",
@@ -48,7 +48,7 @@ const MISSIONS: MissionProfile[] = [
     weights: { immune: 0.95, energy: 1.0, oxidative: 0.95, telomere: 0.95, microbiome: 0.85 },
     cadence: "Pre · biweekly DBS + microbiome · landing · R+30 · R+90 · R+180 · R+365",
     recoveryWindow: "Eighteen months of recovery monitoring",
-    notes: "Energy metabolism rises in priority. Microbiome sampling becomes a continuous coupled-immune layer rather than a standalone signal.",
+    notes: "Energy metabolism rises in priority. Microbiome (the bacteria living on and in you) sampling becomes a continuous coupled-immune layer rather than a standalone signal.",
   },
 ];
 

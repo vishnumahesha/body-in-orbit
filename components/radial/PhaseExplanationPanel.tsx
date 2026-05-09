@@ -10,7 +10,7 @@ const PHASE_EXPLANATIONS: Record<
   baseline: {
     title: "Baseline",
     description:
-      "Baseline means this crew member's pre-flight reference state. It is not a universal normal.",
+      "Baseline means this crew member's pre-flight reference state: L-92 to L-3 (92 to 3 days before launch). It is not a universal normal.",
   },
   inflight: {
     title: "In-flight",
@@ -20,22 +20,22 @@ const PHASE_EXPLANATIONS: Record<
   r_plus_1: {
     title: "R+1",
     description:
-      "The strongest post-flight molecular movement appears here across multiple monitoring domains.",
+      "R+1 (one day after landing) is where the strongest post-flight molecular movement appears across multiple monitoring domains.",
   },
   r_plus_45: {
     title: "R+45",
     description:
-      "Some signals move back toward baseline, but recovery is not uniform across biological layers.",
+      "R+45 (~6 weeks after landing) shows some signals moving back toward baseline, but recovery is not uniform across biological layers.",
   },
   r_plus_82: {
     title: "R+82",
     description:
-      "Later recovery remains layer-dependent. Some domains look closer to baseline while others remain partially shifted or uncertain.",
+      "R+82 (~12 weeks after landing) shows layer-dependent recovery. Some domains look closer to baseline while others remain partially shifted or uncertain.",
   },
   r_plus_194: {
     title: "R+194",
     description:
-      "Longer recovery context exists for fewer datasets, so this phase should be read with higher coverage caution.",
+      "R+194 (~6 months after landing) has longer recovery context for fewer datasets, so read this phase with higher coverage caution.",
   },
   hero: {
     title: "Overview",

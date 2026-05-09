@@ -17,26 +17,26 @@ export interface DebriefEntry {
 export const personalDebriefs: Record<CrewId, DebriefEntry> = {
   C001: {
     readiness:  "Your baseline placed you within crew range on all five domains.",
-    risks:      "At FD2 your immune markers began shifting. By R+1 cytokine levels peaked above crew average.",
-    monitoring: "Extended monitoring through R+194 is recommended for your immune domain.",
-    comparison: "Your immune perturbation ranked highest among crew members at R+1.",
+    risks:      "At FD2 (day 2 of the flight) your immune markers began shifting. By R+1 (one day after landing), cytokines (immune messenger proteins) peaked above crew average.",
+    monitoring: "Extended monitoring through R+194 (~6 months after landing) is recommended for your immune domain.",
+    comparison: "Your immune perturbation (shift from your own baseline) ranked highest among crew members at R+1.",
   },
   C002: {
     readiness:  "Your oxidative baseline was within expected pre-flight range.",
-    risks:      "EVP and plasma oxidative markers diverged at R+1 — recovery happened in layers.",
-    monitoring: "Plasma protein markers warranted monitoring through R+82.",
+    risks:      "EVP and plasma oxidative markers diverged at R+1 (one day after landing); recovery happened in layers.",
+    monitoring: "Plasma protein markers warranted monitoring through R+82 (~12 weeks after landing).",
     comparison: "Your oxidative recovery showed the clearest compartment split in the crew.",
   },
   C003: {
-    readiness:  "Your telomere baseline showed pre-flight length in the expected range.",
+    readiness:  "Your telomere (protective cap on the end of your DNA) baseline showed pre-flight length in the expected range.",
     risks:      "In-flight telomere elongation was the strongest signal measured across all crew.",
     monitoring: "Post-flight shortening warrants tracking through the six-month window.",
-    comparison: "Your telomere signal was most pronounced in the crew during FD2-FD3.",
+    comparison: "Your telomere signal was most pronounced in the crew during FD2-FD3 (days 2-3 of the flight).",
   },
   C004: {
-    readiness:  "Your microbiome baseline showed typical pre-flight diversity.",
-    risks:      "Skin and oral microbiota shifted at FD2-3, correlating with immune activity.",
+    readiness:  "Your microbiome (the bacteria living on and in you) baseline showed typical pre-flight diversity.",
+    risks:      "Skin and oral microbiota shifted at FD2-FD3 (days 2-3 of the flight), tracking alongside immune activity.",
     monitoring: "Microbiome-immune coupling suggests an integrated monitoring approach.",
-    comparison: "Your microbiome perturbation was most coupled to immune signals in the crew.",
+    comparison: "Your microbiome perturbation (shift from your own baseline) was most coupled to immune signals in the crew.",
   },
 };

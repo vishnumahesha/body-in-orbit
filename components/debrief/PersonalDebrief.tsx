@@ -49,7 +49,9 @@ export function PersonalDebrief() {
       </AnimatePresence>
 
       <p className="font-mono text-[10px] tracking-wider text-slate-600 mt-10 pt-6 border-t border-slate-800">
-        ALL SCORES ARE BASELINE-RELATIVE. THIS IS A COMMUNICATION AID, NOT A CLINICAL ASSESSMENT. n=4.
+        ALL SCORES ARE BASELINE-RELATIVE (COMPARED TO YOUR OWN PRE-FLIGHT
+        NUMBERS). THIS IS A COMMUNICATION AID, NOT A CLINICAL ASSESSMENT. n=4
+        (DATA FROM 4 CREW MEMBERS).
       </p>
     </div>
   );

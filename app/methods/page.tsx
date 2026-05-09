@@ -8,7 +8,7 @@ import remarkGfm from "remark-gfm";
 export const metadata = {
   title: "Methods Note · Body in Orbit",
   description:
-    "How Body in Orbit turns Inspiration4 molecular data into a communication-safe crew debrief.",
+    "How Body in Orbit turns Inspiration4 molecular data into a responsible crew debrief.",
 };
 
 const markdownComponents: Components = {

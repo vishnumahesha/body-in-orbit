@@ -16,7 +16,7 @@ export const domains: Record<string, BiologicalDomain> = {
     observedTimepoints: ["L-92", "L-44", "L-3", "R+1", "R+45", "R+82", "R+194"],
     sourceIds: ["kim-2024-single-cell"],
     keyFindings: [
-      "18 cytokines/chemokines/growth factors changed",
+      "18 cytokines (immune messenger proteins), chemokines, and growth factors changed",
       "FOXP3/Treg activation at R+1",
       "MHC class I (HLA-A/B/C, B2M) long-term suppression",
     ],
@@ -38,7 +38,7 @@ export const domains: Record<string, BiologicalDomain> = {
       plainEnglish:
         "Multiple immune markers changed after landing, with the strongest changes happening right after the crew returned",
       technicalFinding:
-        "18 cytokines/chemokines/growth factors showed significant changes (q<0.05). FOXP3+ regulatory T cell activation observed at R+1. MHC class I genes (HLA-A, HLA-B, HLA-C, B2M) showed sustained downregulation through R+194",
+        "18 cytokines (immune messenger proteins), chemokines, and growth factors showed significant changes (q<0.05). FOXP3+ regulatory T cell activation observed at R+1 (one day after landing). MHC class I genes (HLA-A, HLA-B, HLA-C, B2M) showed sustained downregulation through R+194 (~6 months after landing)",
       astronautSafeWording:
         "Your immune system showed multiple molecular-level shifts after the flight. These are biological signals we're tracking, not signs of illness or vulnerability",
       evidenceStatus: "postflight_observed",
@@ -56,7 +56,7 @@ export const domains: Record<string, BiologicalDomain> = {
         confidence: "high",
       },
       whyScore:
-        "Score 3: Multiple markers across multiple assays with clear persistent pattern through R+194",
+        "Score 3: Multiple markers across multiple assays with clear persistent pattern through R+194 (~6 months after landing)",
       caution:
         "These are molecular signals, not clinical diagnoses. Changes do not indicate immune failure or disease",
       notClaiming: [
@@ -184,7 +184,7 @@ export const domains: Record<string, BiologicalDomain> = {
       plainEnglish:
         "Oxidative stress molecules changed after the flight, but different types of molecules recovered at different speeds",
       technicalFinding:
-        "Plasma proteomics and metabolomics revealed oxidative stress response. Inosine and taurine significantly increased (q<0.05). 93% of extracellular vesicle protein differentially abundant proteins (EVP DAPs) returned toward baseline by R+82, while 73% of plasma DAPs remained perturbed",
+        "Plasma proteomics and metabolomics revealed oxidative stress response. Inosine and taurine significantly increased (q<0.05). 93% of extracellular vesicle protein differentially abundant proteins (EVP DAPs) returned toward baseline by R+82 (~12 weeks after landing), while 73% of plasma DAPs remained perturbed",
       astronautSafeWording:
         "Your body showed oxidative stress signals after landing. Most of these markers recovered, though some types took longer than others. This is a biological response pattern, not tissue damage",
       evidenceStatus: "postflight_observed",
@@ -202,7 +202,7 @@ export const domains: Record<string, BiologicalDomain> = {
         confidence: "medium_high",
       },
       whyScore:
-        "Score 2: Multiple markers across multiple assays with clear recovery pattern by R+82",
+        "Score 2: Multiple markers across multiple assays with clear recovery pattern by R+82 (~12 weeks after landing)",
       caution:
         "Recovery rates varied by molecular compartment. This is not evidence of injury",
       notClaiming: ["cellular injury", "tissue damage"],
@@ -437,7 +437,7 @@ export const domains: Record<string, BiologicalDomain> = {
     label: "Telomere Dynamics",
     shortLabel: "Telomere",
     plainLanguage:
-      "Telomeres got longer during flight then shortened after, measured directly in space",
+      "Telomeres (protective caps on the ends of your DNA) got longer during flight then shortened after, measured directly in space",
     color: "#A78BFA",
     angleDeg: 126,
     defaultScore: 2,
@@ -470,9 +470,9 @@ export const domains: Record<string, BiologicalDomain> = {
       id: "telomere-evidence-001",
       domainId: "telomere",
       claim:
-        "Telomere length showed bidirectional perturbation with in-flight elongation and post-flight shortening",
+        "Telomere length showed bidirectional perturbation (shift from baseline) with in-flight elongation and post-flight shortening",
       plainEnglish:
-        "Telomeres got longer while in orbit for all 4 crew members, then got shorter for 3 out of 4 after landing",
+        "Telomeres (protective caps on the ends of your DNA) got longer while in orbit for all 4 crew members, then got shorter for 3 out of 4 after landing",
       technicalFinding:
         "Telomere length assay on dried blood spots collected in-flight (FD1, FD2, FD3) showed significant elongation in all 4 crew members (P<0.001). Post-flight, telomeres shortened in 3/4 crew (P<0.02). Whole-genome sequencing and clonal hematopoiesis panel showed no significant genome instability",
       astronautSafeWording:
@@ -506,7 +506,7 @@ export const domains: Record<string, BiologicalDomain> = {
         confidence: "high",
       },
       whyScore:
-        "Score 2: Single marker (telomere length) but with in-flight measurement and bidirectional pattern",
+        "Score 2: Single marker (telomere length) but with in-flight measurement during FD2-FD3 (days 2-3 of the flight) and bidirectional pattern",
       caution:
         "Bidirectional pattern requires careful interpretation. This is not evidence of aging or rejuvenation",
       notClaiming: ["genome instability", "damage", "rejuvenation"],
@@ -602,7 +602,7 @@ export const domains: Record<string, BiologicalDomain> = {
     label: "Microbiome Dynamics",
     shortLabel: "Microbiome",
     plainLanguage:
-      "Skin and mouth bacteria shifted consistently, linked to immune changes",
+      "Microbiome (the bacteria living on and in you) signals shifted on skin and in the mouth, linked to immune changes",
     color: "#2DD4BF",
     angleDeg: 198,
     defaultScore: 1,
@@ -627,9 +627,9 @@ export const domains: Record<string, BiologicalDomain> = {
       claim:
         "Microbiome showed consistent shifts with immune correlation signals",
       plainEnglish:
-        "Bacteria on skin and in the mouth changed during and after the flight, and these changes were linked to immune system activity",
+        "Microbiome (the bacteria living on and in you) signals changed during and after the flight, and these changes were linked to immune system activity",
       technicalFinding:
-        "16S rRNA, metagenomics, and metatranscriptomics showed consistent skin and oral microbiota shifts at FD2, FD3, and R+1. Microbial gene expression patterns correlated with immune cell activity. Skin spatial transcriptomics revealed 95 upregulated and 121 downregulated genes",
+        "16S rRNA, metagenomics, and metatranscriptomics showed consistent skin and oral microbiota shifts at FD2-FD3 (days 2-3 of the flight) and R+1 (one day after landing). Microbial gene expression patterns correlated with immune cell activity. Skin spatial transcriptomics revealed 95 upregulated and 121 downregulated genes",
       astronautSafeWording:
         "Your skin and mouth bacteria showed changes during the mission. These shifts were linked to your immune system activity. This is not a sign of infection or harmful exposure",
       evidenceStatus: "mixed",

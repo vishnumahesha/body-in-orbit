@@ -8,12 +8,12 @@ import { useCrew } from "@/lib/crewContext";
 import { SmallMultiplesRow } from "./MiniPhaseChart";
 
 const PHASES: { id: MissionPhase; label: string; sub: string }[] = [
-  { id: "baseline", label: "Baseline", sub: "L−92 to L−3" },
-  { id: "inflight", label: "In-flight", sub: "FD2 – FD3" },
-  { id: "r_plus_1", label: "R+1", sub: "Day after landing" },
-  { id: "r_plus_45", label: "R+45", sub: "Six weeks post" },
-  { id: "r_plus_82", label: "R+82", sub: "Twelve weeks post" },
-  { id: "r_plus_194", label: "R+194", sub: "Six months post" },
+  { id: "baseline", label: "Baseline", sub: "L-92 to L-3 (before launch)" },
+  { id: "inflight", label: "In-flight", sub: "FD2-FD3 (flight days 2-3)" },
+  { id: "r_plus_1", label: "R+1", sub: "One day after landing" },
+  { id: "r_plus_45", label: "R+45", sub: "~6 weeks after landing" },
+  { id: "r_plus_82", label: "R+82", sub: "~12 weeks after landing" },
+  { id: "r_plus_194", label: "R+194", sub: "~6 months after landing" },
 ];
 
 const SVG_SIZE = 560;
@@ -399,7 +399,10 @@ export function AnimatedRadialChart({
           <span className="block w-3 h-3 rounded-full border border-[#06B6D4]" />
           inferred / extrapolated
         </span>
-        <span>distance from center = perturbation score, not severity</span>
+        <span>
+          distance from center = perturbation score (shift from your own baseline), not
+          severity
+        </span>
       </div>
 
       <SmallMultiplesRow

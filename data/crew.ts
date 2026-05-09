@@ -22,7 +22,7 @@ export const crew: Record<string, CrewProfile> = {
     ageBand: "Age band 35-44",
     bioFocus: "Brief focus: immune monitoring",
     bioFocusBlurb:
-      "Multi-marker immune perturbation persisted longest in this crew member, with cytokine signal still distinct from baseline at R+82.",
+      "Multi-marker immune perturbation (shift from this crew member's baseline) persisted longest here, with cytokines (immune messenger proteins) still distinct from baseline at R+82 (~12 weeks after landing).",
     signature:
       "Immune regulation read as the highest-priority monitoring domain across the post-flight window.",
     domainScoreOverrides: { immune: 3, oxidative: 2, telomere: 2 },
@@ -44,7 +44,7 @@ export const crew: Record<string, CrewProfile> = {
     ageBand: "Age band 25-34",
     bioFocus: "Brief focus: oxidative recovery context",
     bioFocusBlurb:
-      "EVP markers returned toward baseline by R+82 while the plasma compartment held a distinct signal — recovery happened in layers.",
+      "EVP markers returned toward baseline by R+82 (~12 weeks after landing) while the plasma compartment held a distinct signal; recovery happened in layers.",
     signature:
       "Oxidative response sits highest in this brief because of split recovery rates between molecular compartments.",
     domainScoreOverrides: { oxidative: 3, immune: 2, energy: 2 },
@@ -66,11 +66,11 @@ export const crew: Record<string, CrewProfile> = {
     ageBand: "Age band 45-54",
     bioFocus: "Brief focus: genome / telomere context",
     bioFocusBlurb:
-      "Telomeres elongated during flight and shortened after — a bidirectional pattern observed in all four crew members and most pronounced here.",
+      "Telomeres (protective caps on the ends of your DNA) elongated during flight and shortened after; the bidirectional pattern appeared in all four crew members and was most pronounced here.",
     signature:
       "Telomere dynamics is the only domain in this brief with direct in-flight measurement via dried blood spots.",
     domainScoreOverrides: { telomere: 3, immune: 2, oxidative: 1 },
-    recoveryNote: "Telomeres elongated FD1-3 (P<0.001), shortened post-flight (P<0.02).",
+    recoveryNote: "Telomeres elongated FD1-FD3 (flight days 1-3, P<0.001), shortened post-flight (P<0.02).",
     monitoringPriority: ["telomere", "immune", "energy", "oxidative", "microbiome"],
     voiceLines: [
       "C003. Pilot. Telomeres got longer during flight. Three of four shortened after.",
@@ -88,7 +88,7 @@ export const crew: Record<string, CrewProfile> = {
     ageBand: "Age band 35-44",
     bioFocus: "Brief focus: microbiome and immune context",
     bioFocusBlurb:
-      "Skin and oral microbiota shifted at FD2-3 and R+1, with microbial gene expression patterns correlating with immune cell activity.",
+      "Microbiome (the bacteria living on and in you) signals shifted at FD2-FD3 (days 2-3 of the flight) and R+1 (one day after landing), tracking alongside immune cell activity.",
     signature:
       "Microbiome shifts read as a coupled monitoring layer rather than an isolated infection signal.",
     domainScoreOverrides: { microbiome: 2, immune: 2, energy: 2 },

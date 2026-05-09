@@ -16,7 +16,7 @@ export const claims: ClaimCard[] = [
     id: 1,
     text: "Immune-related signals shifted after flight.",
     correctZone: "supported",
-    why: "Published Inspiration4 immune analyses reported cytokine, chemokine, and immune-cell signal changes after flight.",
+    why: "Published Inspiration4 (the 2021 first all-civilian SpaceX mission) immune analyses reported cytokines (immune messenger proteins), chemokines, and immune-cell signal changes after flight.",
     saferWording: "Immune regulation showed a monitoring-relevant shift after flight.",
     source: "Kim et al. 2024 · Nature Communications",
     doNotConclude: "infection · immune dysfunction · illness",
@@ -34,7 +34,7 @@ export const claims: ClaimCard[] = [
   },
   {
     id: 3,
-    text: "Telomere length changed during and after flight.",
+    text: "Telomere (protective cap on the end of your DNA) length changed during and after flight.",
     correctZone: "supported",
     why: "Published genome analyses reported telomere elongation during flight and shortening after return.",
     saferWording: "Telomere dynamics shifted across mission phases.",
@@ -74,7 +74,7 @@ export const claims: ClaimCard[] = [
   },
   {
     id: 7,
-    text: "Microbiome composition shifted during flight.",
+    text: "Microbiome (the bacteria living on and in you) composition shifted during flight.",
     correctZone: "supported",
     why: "Published host-microbiome analyses reported skin and oral microbiome changes across the mission.",
     saferWording: "Microbiome composition showed mission-associated shifts.",

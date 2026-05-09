@@ -76,7 +76,7 @@ export function PrintableBiobrief() {
             </div>
             <div className="font-mono text-sm text-[#F8FAFC]">{today}</div>
             <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748B] mt-2">
-              Mission · Inspiration4
+              Mission · Inspiration4 (2021 all-civilian SpaceX mission)
             </div>
             <div className="font-mono text-xs text-[#94A3B8]">3 days · LEO ~585 km</div>
           </div>
@@ -96,7 +96,8 @@ export function PrintableBiobrief() {
 
         <section className="mb-8">
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#64748B] mb-3">
-            Domain readout · post-flight perturbation score (0–3)
+            Domain readout · post-flight perturbation score (shift from your own
+            baseline, 0-3)
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {ORDER.map((id) => {

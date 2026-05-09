@@ -129,7 +129,10 @@ function HomeContent() {
               <span className="text-[#06B6D4]">The biology did not land all at once.</span>
             </h2>
             <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-8">
-              Distance from baseline is a perturbation score (0–3) — a communication score, not clinical severity. n=4. Per-crew, baseline-relative.
+              Distance from baseline is a perturbation score (how far you&apos;ve shifted
+              from your own pre-flight normal, 0-3 scale), not severity. n=4 (data from
+              4 crew members). Per-crew, baseline-relative (compared to your own
+              pre-flight numbers).
             </p>
             <SignatureSlopeChart />
           </Section>
@@ -141,7 +144,7 @@ function HomeContent() {
               Phase detail.
             </h2>
             <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-8">
-              Click any phase below to inspect domain-by-domain perturbation at that timepoint.
+              Click any phase below to inspect how each domain moved at that timepoint.
             </p>
             <div data-export="radial-section">
               <RadialChartWithExplanation />
