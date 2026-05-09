@@ -75,27 +75,31 @@ function SlideStep({ slide }: { slide: StorySlide }) {
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
 
-  const opOut = reduce ? [1, 1] : [0, 1];
-  const yOut = reduce ? [0, 0] : [16, 0];
+  const isLeft = slide.textSide === "left";
+  const textFrom = reduce ? 0 : (isLeft ? -120 : 120);
+  const exFrom   = reduce ? 0 : (isLeft ? 120 : -120);
+
+  const opOut   = reduce ? [1, 1] : [0, 1];
+  const textOut = reduce ? [0, 0] : [textFrom, 0];
+  const exOut   = reduce ? [0, 0] : [exFrom, 0];
 
   const ebOp = useTransform(scrollYProgress, [0.02, 0.08], opOut);
-  const ebY  = useTransform(scrollYProgress, [0.02, 0.08], yOut);
+  const ebX  = useTransform(scrollYProgress, [0.02, 0.08], textOut);
   const hdOp = useTransform(scrollYProgress, [0.08, 0.18], opOut);
-  const hdY  = useTransform(scrollYProgress, [0.08, 0.18], yOut);
+  const hdX  = useTransform(scrollYProgress, [0.08, 0.18], textOut);
   const b1Op = useTransform(scrollYProgress, [0.18, 0.30], opOut);
-  const b1Y  = useTransform(scrollYProgress, [0.18, 0.30], yOut);
+  const b1X  = useTransform(scrollYProgress, [0.18, 0.30], textOut);
   const b2Op = useTransform(scrollYProgress, [0.30, 0.44], opOut);
-  const b2Y  = useTransform(scrollYProgress, [0.30, 0.44], yOut);
+  const b2X  = useTransform(scrollYProgress, [0.30, 0.44], textOut);
   const b3Op = useTransform(scrollYProgress, [0.44, 0.58], opOut);
-  const b3Y  = useTransform(scrollYProgress, [0.44, 0.58], yOut);
+  const b3X  = useTransform(scrollYProgress, [0.44, 0.58], textOut);
   const exOp = useTransform(scrollYProgress, [0.58, 0.74], opOut);
-  const exY  = useTransform(scrollYProgress, [0.58, 0.74], yOut);
+  const exX  = useTransform(scrollYProgress, [0.58, 0.74], exOut);
 
   const imgScale = useTransform(scrollYProgress, [0, 1], reduce ? [1, 1] : [1.0, 1.05]);
   const imgY     = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [0, -60]);
   const ovOp     = useTransform(scrollYProgress, [0, 0.10, 0.85, 1], reduce ? [0.7, 0.7, 0.7, 0.7] : [0.35, 0.85, 0.85, 0.45]);
 
-  const isLeft = slide.textSide === "left";
   const sideGradient = isLeft
     ? "linear-gradient(90deg, rgba(2,6,23,0.92) 0%, rgba(2,6,23,0.75) 24%, rgba(2,6,23,0.30) 50%, rgba(2,6,23,0) 68%)"
     : "linear-gradient(270deg, rgba(2,6,23,0.92) 0%, rgba(2,6,23,0.75) 24%, rgba(2,6,23,0.30) 50%, rgba(2,6,23,0) 68%)";
@@ -125,13 +129,13 @@ function SlideStep({ slide }: { slide: StorySlide }) {
           >
             <div className={`md:col-span-7 max-w-xl ${isLeft ? "" : "md:[direction:ltr]"}`}>
               <motion.div
-                style={{ opacity: ebOp, y: ebY }}
+                style={{ opacity: ebOp, x: ebX }}
                 className="font-mono text-[10px] tracking-[0.3em] text-cyan-400 mb-5"
               >
                 SLIDE {slide.number} · {slide.eyebrow}
               </motion.div>
               <motion.h2
-                style={{ opacity: hdOp, y: hdY, textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
+                style={{ opacity: hdOp, x: hdX, textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
                 className="font-space-grotesk text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.05] tracking-tight"
               >
                 {slide.headline[0]}
@@ -140,13 +144,13 @@ function SlideStep({ slide }: { slide: StorySlide }) {
               </motion.h2>
               <div className="space-y-5">
                 {([
-                  [b1Op, b1Y, slide.beats[0]],
-                  [b2Op, b2Y, slide.beats[1]],
-                  [b3Op, b3Y, slide.beats[2]],
-                ] as const).map(([op, y, text], i) => (
+                  [b1Op, b1X, slide.beats[0]],
+                  [b2Op, b2X, slide.beats[1]],
+                  [b3Op, b3X, slide.beats[2]],
+                ] as const).map(([op, x, text], i) => (
                   <motion.p
                     key={i}
-                    style={{ opacity: op, y, textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
+                    style={{ opacity: op, x, textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
                     className="font-inter text-base md:text-lg text-slate-100 leading-relaxed"
                   >
                     {text}
@@ -155,7 +159,7 @@ function SlideStep({ slide }: { slide: StorySlide }) {
               </div>
             </div>
             <motion.div
-              style={{ opacity: exOp, y: exY }}
+              style={{ opacity: exOp, x: exX }}
               className={`md:col-span-5 ${isLeft ? "" : "md:[direction:ltr]"}`}
             >
               <ExtraPanel extras={slide.extras} />
