@@ -146,13 +146,13 @@ export function SampleCoverageMatrix() {
                 >
                   <div className="pr-2">
                     <div
-                      className={`font-mono text-[10px] uppercase tracking-[0.16em] ${
+                      className={`font-mono text-[12px] uppercase tracking-[0.16em] ${
                         isRowHovered ? "text-[#06B6D4]" : "text-[#64748B]"
                       }`}
                     >
                       {d.osdId}
                     </div>
-                    <div className="font-inter text-xs text-[#F8FAFC] leading-tight">
+                    <div className="font-inter text-[13px] text-[#F8FAFC] leading-tight">
                       {d.label}
                     </div>
                   </div>

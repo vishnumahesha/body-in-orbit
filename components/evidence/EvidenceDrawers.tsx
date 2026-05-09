@@ -132,7 +132,7 @@ export function EvidenceDrawers() {
                           <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748B] mb-2">
                             Why this score
                           </div>
-                          <p className="font-mono text-xs text-[#94A3B8] leading-relaxed">
+                          <p className="font-mono text-sm text-[#94A3B8] leading-relaxed">
                             {e.whyScore}
                           </p>
                         </div>
@@ -140,7 +140,7 @@ export function EvidenceDrawers() {
                           <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748B] mb-2">
                             Mission planning relevance
                           </div>
-                          <p className="font-inter text-xs text-[#94A3B8] leading-relaxed">
+                          <p className="font-inter text-sm text-[#94A3B8] leading-relaxed">
                             {e.missionPlanningRelevance}
                           </p>
                         </div>

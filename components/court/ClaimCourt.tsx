@@ -6,7 +6,7 @@ import { claims, type ClaimZone } from "@/data/claims";
 
 const ZONE_META: Record<ClaimZone, { label: string; color: string; glyph: string }> = {
   supported: { label: "Supported", color: "#34D399", glyph: "✓" },
-  monitoring: { label: "Monitoring only", color: "#FBBF24", glyph: "◎" },
+  monitoring: { label: "Monitoring signal", color: "#FBBF24", glyph: "◎" },
   overclaim: { label: "Overclaim", color: "#F87171", glyph: "✕" },
 };
 
@@ -80,7 +80,7 @@ export function ClaimCourt() {
           </div>
         </div>
         <div className="font-mono text-[11px] tracking-[0.2em] text-[#94A3B8]">
-          Score · {correctCount} / {claims.length}
+          Review progress: {correctCount} / {claims.length}
         </div>
       </div>
 
@@ -204,7 +204,7 @@ export function ClaimCourt() {
                           <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748B] mb-1">
                             Source
                           </div>
-                          <p className="font-mono text-xs text-[#94A3B8]">
+                          <p className="font-mono text-sm text-[#94A3B8]">
                             {current.source}
                           </p>
                         </div>
@@ -223,7 +223,7 @@ export function ClaimCourt() {
                           <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#F87171]/80 mb-2">
                             Do not conclude
                           </div>
-                          <p className="font-mono text-xs text-[#F87171]/80 leading-relaxed">
+                          <p className="font-mono text-sm text-[#F87171]/80 leading-relaxed">
                             {current.doNotConclude}
                           </p>
                         </div>

@@ -20,7 +20,7 @@ export const crew: Record<string, CrewProfile> = {
     displayLabel: "C001",
     callsign: "C001 · CDR",
     ageBand: "Age band 35-44",
-    bioFocus: "Strongest immune signal",
+    bioFocus: "Brief focus: immune monitoring",
     bioFocusBlurb:
       "Multi-marker immune perturbation persisted longest in this crew member, with cytokine signal still distinct from baseline at R+82.",
     signature:
@@ -42,7 +42,7 @@ export const crew: Record<string, CrewProfile> = {
     displayLabel: "C002",
     callsign: "C002 · MO",
     ageBand: "Age band 25-34",
-    bioFocus: "Layered oxidative recovery",
+    bioFocus: "Brief focus: oxidative recovery context",
     bioFocusBlurb:
       "EVP markers returned toward baseline by R+82 while the plasma compartment held a distinct signal — recovery happened in layers.",
     signature:
@@ -64,7 +64,7 @@ export const crew: Record<string, CrewProfile> = {
     displayLabel: "C003",
     callsign: "C003 · PLT",
     ageBand: "Age band 45-54",
-    bioFocus: "Bidirectional telomere signal",
+    bioFocus: "Brief focus: genome / telomere context",
     bioFocusBlurb:
       "Telomeres elongated during flight and shortened after — a bidirectional pattern observed in all four crew members and most pronounced here.",
     signature:
@@ -86,7 +86,7 @@ export const crew: Record<string, CrewProfile> = {
     displayLabel: "C004",
     callsign: "C004 · MS",
     ageBand: "Age band 35-44",
-    bioFocus: "Microbiome–immune coupling",
+    bioFocus: "Brief focus: microbiome and immune context",
     bioFocusBlurb:
       "Skin and oral microbiota shifted at FD2-3 and R+1, with microbial gene expression patterns correlating with immune cell activity.",
     signature:

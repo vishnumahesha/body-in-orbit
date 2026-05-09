@@ -91,27 +91,31 @@ function RadialChartWithExplanation() {
 }
 
 function HomeContent() {
-  const [briefingStarted, setBriefingStarted] = useState(false);
-
   return (
-    <div className="min-h-screen bg-[#000000]">
-      <div className="fixed inset-0 z-0 opacity-30 max-h-[40vh]">
+    <div className="min-h-screen bg-[#000000] relative">
+      <div className="absolute top-0 left-0 right-0 h-screen z-0 opacity-25 pointer-events-none overflow-hidden">
         <HeroBackground />
       </div>
 
       <div className="relative z-10">
-        <MissionStart onBegin={() => setBriefingStarted(true)} />
+        <MissionStart onBegin={() => {
+          if (typeof window !== "undefined") {
+            const crewSection = document.querySelector('[data-section="crew"]');
+            crewSection?.scrollIntoView({ behavior: "smooth" });
+          }
+        }} />
       </div>
 
       <div className="relative z-10">
         {/* Section 1: Crew Selector — centerpiece */}
         <Section eyebrow="01 · Crew Selector">
-          <CrewSelector />
+          <div data-section="crew">
+            <CrewSelector />
+          </div>
         </Section>
       </div>
 
-      {briefingStarted && (
-        <div className="relative z-10 opacity-0 animate-[fadeIn_0.6s_ease-out_0.3s_forwards]">
+      <div className="relative z-10">
 
           {/* Section 2: Mission framing */}
           <Section eyebrow="02 · Mission framing">
@@ -248,7 +252,6 @@ function HomeContent() {
             </div>
           </Section>
         </div>
-      )}
 
       <style jsx global>{`
         @keyframes fadeIn {

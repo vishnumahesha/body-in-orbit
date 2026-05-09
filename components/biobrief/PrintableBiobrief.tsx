@@ -236,6 +236,10 @@ export function PrintableBiobrief() {
           </ul>
         </section>
 
+        <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#06B6D4] mt-8 pt-6 border-t border-[#1E293B]/50">
+          Cleared for communication. Not cleared for overclaiming.
+        </div>
+
         <footer className="mt-10 pt-5 border-t border-[#1E293B] flex justify-between flex-wrap gap-3">
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#64748B]">
             Body in Orbit · Inspiration4 debrief · molecular monitoring report

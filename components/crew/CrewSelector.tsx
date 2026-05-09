@@ -162,6 +162,10 @@ export function CrewSelector() {
         })}
       </div>
 
+      <p className="font-mono text-[12px] text-[#64748B] max-w-2xl mt-6 leading-relaxed">
+        Crew cards are briefing views. Molecular evidence remains labeled by internal crew ID unless public identity mapping is verified in the source data.
+      </p>
+
       <AnimatePresence mode="wait">
         <motion.p
           key={`note-${crewId}`}
