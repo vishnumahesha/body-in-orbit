@@ -104,6 +104,14 @@ pre {
   position: absolute !important;
 }
 
+/* Hide Unicorn Studio attribution badge */
+[class*="us-attribution"],
+[data-us-attribution],
+a[href*="unicorn.studio"],
+div[class*="unicorn-studio-watermark"] {
+  display: none !important;
+}
+
 @media print {
   html::before {
     display: none !important;

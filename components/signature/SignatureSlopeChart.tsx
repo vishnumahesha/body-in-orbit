@@ -142,7 +142,16 @@ export function SignatureSlopeChart() {
             y={0}
             stroke="#64748B"
             strokeDasharray="4 3"
-            label={{ value: "BASELINE", position: "insideTopLeft", style: { fontFamily: "IBM Plex Mono, monospace", fontSize: 9, fill: "#64748B" } }}
+            label={{
+              value: "BASELINE",
+              position: "insideTopLeft",
+              style: {
+                fill: "#64748B",
+                fontFamily: "IBM Plex Mono, monospace",
+                fontSize: 10,
+                letterSpacing: "0.1em",
+              },
+            }}
           />
           <Tooltip content={(props) => <ChartTooltip {...(props as unknown as TooltipProps)} />} />
           {DOMAIN_KEYS.map((key, i) => {
