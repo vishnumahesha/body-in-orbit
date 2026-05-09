@@ -226,7 +226,7 @@ function HomeContent() {
 
             <div className="flex gap-4 flex-wrap">
               <Link
-                href="/docs/METHODS_NOTE.md"
+                href="/methods"
                 className="bg-[#06B6D4]/10 border border-[#06B6D4]/30 text-[#06B6D4] px-6 py-3 rounded-xl font-mono text-sm hover:bg-[#06B6D4]/20 transition-colors"
               >
                 Read Methods Note →
@@ -234,7 +234,9 @@ function HomeContent() {
               <button
                 onClick={() =>
                   typeof window !== "undefined" &&
-                  document.getElementById("evidence-receipts")?.scrollIntoView({ behavior: "smooth" })
+                  document
+                    .getElementById("evidence-receipts")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }
                 className="bg-white/5 border border-[#1E293B] text-[#94A3B8] px-6 py-3 rounded-xl font-mono text-sm hover:bg-cyan-500/10 hover:border-[#94A3B8] transition-colors"
               >

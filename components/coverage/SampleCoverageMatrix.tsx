@@ -268,7 +268,7 @@ export function SampleCoverageMatrix() {
               exit={{ opacity: 0 }}
               className="font-mono text-[11px] text-[#475569]"
             >
-              Each cell shows whether that dataset was collected at that timepoint. Teal = collected. Purple = differential anchor (reference comparison). Dashed = not collected.
+              Each cell shows whether that dataset was collected at that timepoint. Teal = collected. Purple = differential anchor (the reference data point used for comparison). Dashed = not collected.
             </motion.p>
           )}
         </AnimatePresence>
