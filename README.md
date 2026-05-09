@@ -1,94 +1,191 @@
 # Body in Orbit
 
-**A post-flight molecular debrief for Inspiration4 crew data.**
+> A communication-safety prototype for post-flight molecular debriefs of Inspiration4 omics data.
 
-Torchlight Summit Biosovereignty Hackathon 2026 — Team 3 — Vishnu Mahesha
+**Track 3 — Communication & Visualization** · Torchlight Summit Biosovereignty Hackathon 2026 · Team 3 · Vishnu Mahesha (Rouse High School / Alpha X Program)
+
+🚀 **Live demo:** [body-in-orbit.vercel.app](https://body-in-orbit.vercel.app)
+📂 **Repo:** [github.com/vishnumahesha/body-in-orbit](https://github.com/vishnumahesha/body-in-orbit)
 
 ---
 
-## What This Is
+## Headline Finding
 
-Body in Orbit is an interactive post-flight Recovery Review. The user selects one of four Inspiration4 crew members and receives a personalized molecular debrief: what shifted, what recovered, what needs monitoring, and what the data does not prove.
+> **The astronaut landed in three days. The biology did not land all at once.**
 
-Every claim traces to a specific dataset (OSD ID), peer-reviewed paper, and confidence level. Every sentence that could be misread as clinical is rewritten with safer wording.
+Across the Inspiration4 crew (n=4), molecular signals shifted in five biological domains and recovered at five different rates. Some markers returned toward baseline by R+82. Others remained perturbed at R+194. The hardest part of communicating this data is not finding signals — it is communicating what they do, and do not, prove.
 
-This is Track 3 (Communication & Visualization) with Track 1 (perturbation analysis) and Track 2 (risk profiling) as supporting layers.
+---
 
-## Live Demo
+## Mission Context
 
-Deployed at: [body-in-orbit.vercel.app](https://body-in-orbit.vercel.app) (pending)
+| Field | Value |
+|---|---|
+| Mission | Inspiration4 (Sept 2021) |
+| Crew | 4 civilians |
+| Duration | 71 hours, 49 minutes |
+| Orbit altitude | ~585 km |
+| Sampling window | 289 days (L-92 → R+194) |
+| Data source | NASA Open Science Data Repository (OSDR) / SOMA consortium |
 
-## Interactive Features
+---
 
-### 1. Crew Selector
-Four clickable astronaut cards (C001-C004). Selecting a crew member re-keys the entire page — radial chart, evidence drawers, monitoring planner, voice debrief, and printable report all update to show that crew member's biological profile.
+## The Living Baseline
 
-### 2. Animated Radial Chart
-SVG radar with 5 biological domains animated across 6 mission phases (Baseline → In-flight → R+1 → R+45 → R+82 → R+194). Autoplay loops through phases. Hover any node for plain-language context. Distance from center is a perturbation score (0-3), not clinical severity.
+The signature figure of this report. Five biological domains × six mission phases. Distance from center is a baseline-relative perturbation score (0–3) — a **communication score, not clinical severity.**
 
-### 3. Claim Court
-10 real-shaped claims about the data. User classifies each as Supported, Monitoring Only, or Overclaim. Reveal shows the verdict, evidence source, safer wording, and what should NOT be concluded. Teaches the n=4 constraint through interaction.
+![The Living Baseline — five domains across six mission phases, baseline-relative perturbation score 0–3](public/figures/living-baseline.png)
 
-### 4. Evidence Receipt Drawers
-5 expandable domain cards. Click to open: technical finding, astronaut-facing wording, sample types, timepoints, score reasoning, and explicit non-claims. Every receipt is traceable to an OSD dataset.
+→ View interactive version at [body-in-orbit.vercel.app](https://body-in-orbit.vercel.app)
 
-### 5. Sample Coverage Matrix
-12 datasets x 10 timepoints. Three states: collected, differential anchor, gap. Hover for dataset metadata, comparison method, and caution. Shows where the data exists and where it does not.
+---
 
-### 6. Monitoring Planner
-Toggle between 3-day, 30-day, and 180-day mission profiles. Domains reorder by priority with animated transitions. Shows sampling cadence, recovery window, and boundary statements.
+## Findings by Domain
 
-### 7. Voice Debrief
-Browser speechSynthesis reads crew-specific approved scripts. Play/pause/stop controls, voice picker, line-level highlighting. Audio reads only what is on screen — no claims are added.
+All scores are baseline-relative (this crew member vs. their own pre-flight reference). Not population norms. Not clinical thresholds.
 
-### 8. Printable BioBrief
-A4-formatted report card with crew metadata, domain scores, recovery notes, monitoring priorities, non-claims list, and full source citations. Print CSS for clean PDF export.
+| Domain | R+1 score | R+82 score | Evidence type | Datasets |
+|---|---|---|---|---|
+| **Immune regulation** | 3 / 3 | 2 / 3 (partial recovery) | Direct (cytokine multiplex, q<0.05) | OSD-575, OSD-656, OSD-570, OSD-569 |
+| **Oxidative response** | 2 / 3 | 1 / 3 (layered: 93% EVP recovered, 73% plasma still shifted) | Direct (proteomics, EVP) | OSD-571, OSD-656 |
+| **Energy metabolism** | 2 / 3 | 1 / 3 (partial) | Pathway-level (OXPHOS enrichment, immune-cell context) | OSD-575, OSD-571, OSD-569 |
+| **Genome / telomere** | 2 / 3 | uncertain (bidirectional, n=4) | Direct (DBS in-flight measurement) | OSD-569, OSD-570 |
+| **Microbiome** | 2 / 3 | partial / unresolved | Ecological (16S, metagenomics, host-microbe coupling) | OSD-572, OSD-573, OSD-630, OSD-574 |
 
-## Data
+→ Full per-claim evidence: [docs/EVIDENCE_LEDGER.md](docs/EVIDENCE_LEDGER.md)
 
-All data from NASA Open Science Data Repository (OSDR) via the Torchlight Hackathon 2026 starter Colab notebook.
+---
 
-**12 datasets** spanning 5 biological domains:
-- Immune regulation (OSD-575, OSD-656, OSD-570, OSD-569)
-- Oxidative response (OSD-571, OSD-656)
-- Energy metabolism (OSD-575, OSD-571, OSD-569)
-- Genome regulation / telomere dynamics (OSD-569, OSD-570)
-- Microbiome interactions (OSD-572, OSD-573, OSD-630, OSD-574)
+## What This Report Does NOT Claim
 
-**8 peer-reviewed sources** from the Inspiration4 consortium (Nature, Nature Communications, Nature Microbiology, Precision Clinical Medicine — all 2024).
+This is a communication-safety prototype, not a clinical instrument.
 
-## Language Safety
+- **NOT a diagnosis.** No condition is named or implied.
+- **NOT a treatment recommendation.** No interventions are advised.
+- **NOT a flight clearance.** No mission readiness is determined here.
+- **NOT a forecast.** Recovery patterns from n=4 do not predict individual outcomes.
+- **NOT a population norm.** All scores are this astronaut versus their own pre-flight baseline.
 
-Forbidden terms: diagnose, treat, cure, permanent damage, causes (causal), proves, confirms, clearance, risk score, safe, unsafe.
+Forbidden terms anywhere in astronaut-facing copy: *diagnose, disease, abnormal, dangerous, damaged, treatment, clearance, safe, unsafe, healthy, unhealthy, predicts, clinically significant, pathology, caused by, infection.* These appear only inside explicit "do not conclude" sections.
 
-Every astronaut-facing sentence uses: signal, shift, perturbation, baseline, recovery, confidence, monitoring, exploratory, "may relate to."
+→ Full design rules: [docs/DESIGN_PHILOSOPHY.md](docs/DESIGN_PHILOSOPHY.md)
 
-## Documentation
+---
 
-- [Proposal](docs/proposal.md) — problem statement and approach
-- [Design Philosophy](docs/DESIGN_PHILOSOPHY.md) — why a Recovery Review, not a dashboard
+## Datasets
+
+12 OSDR datasets spanning 5 domains and 10 timepoints (L-92 through R+194):
+
+| OSDR ID | Description | Modality |
+|---|---|---|
+| OSD-572 | Crew skin/oral/nasal swabs | Microbiome |
+| OSD-573 | Dragon capsule swabs | Microbiome (environment) |
+| OSD-575 | Serum metabolic panel + cytokine arrays | Metabolomics, immune |
+| OSD-571 | Plasma metabolomics, EVP & plasma proteomics | Multi-omics, oxidative |
+| OSD-656 | Urine inflammation panel (NULISAseq) | Immune, oxidative |
+| OSD-630 | Stool metagenomics | Microbiome |
+| OSD-569 | Whole blood profiling (RNA, m6A, CBC) | Multi-omics |
+| OSD-570 | PBMC profiling (snRNA, ATAC, VDJ) | Immune, genome |
+| OSD-574 | Deltoid skin biopsies + microbiome | Skin, microbiome |
+
+→ Full inventory + data shape per dataset: [data/notebookDatasets.ts](data/notebookDatasets.ts)
+→ Analysis methods: [docs/METHODS_NOTE.md](docs/METHODS_NOTE.md) · [analysis/methods_note.md](analysis/methods_note.md)
+
+---
+
+## Source Papers
+
+All citations are 2024 SOMA consortium publications:
+
+- Kim et al. *Nat Commun* 2024 — [10.1038/s41467-024-49211-2](https://doi.org/10.1038/s41467-024-49211-2) (immune)
+- Houerbi et al. *Nat Commun* 2024 — [10.1038/s41467-024-48841-w](https://doi.org/10.1038/s41467-024-48841-w) (secretome, recovery split)
+- Garcia-Medina et al. *Precis Clin Med* 2024 — [10.1093/pcmedi/pbae007](https://doi.org/10.1093/pcmedi/pbae007) (telomere)
+- Tierney et al. *Nat Microbiol* 2024 — [10.1038/s41564-024-01635-8](https://doi.org/10.1038/s41564-024-01635-8) (microbiome)
+- Park et al. *Nat Commun* 2024 — [10.1038/s41467-024-48625-2](https://doi.org/10.1038/s41467-024-48625-2) (skin spatial)
+- Overbey et al. *Nat Commun* 2024 — [10.1038/s41467-024-48806-z](https://doi.org/10.1038/s41467-024-48806-z) (SOMA)
+- Overbey et al. *Nature* 2024 — [10.1038/s41586-024-07639-y](https://doi.org/10.1038/s41586-024-07639-y) (SOMA flagship)
+
+---
+
+## Design Philosophy
+
+Three principles. Full document at [docs/DESIGN_PHILOSOPHY.md](docs/DESIGN_PHILOSOPHY.md).
+
+1. **Visualize scientific responsibility, not just biology.** Every signal is paired with what it does not prove.
+2. **n=4 is not a footnote.** Sample size constrains every score, every claim, every animation. Findings are classified Supported / Monitoring Signal / Overclaim — never as clinical conclusions.
+3. **Built for the crew.** Test for every line: could a mission specialist read this and understand what it means for their body?
+
+---
+
+## Interactive Components
+
+The live site has eight interactive sections, each tied to evidence:
+
+1. **Crew Selector** — pick C001–C004; entire site retargets to that crew's baseline-relative report
+2. **The Living Baseline** — animated radial chart with phase explanation panel
+3. **Evidence Drawers** — per-domain receipts: claim, evidence, q-values, sample size, do-not-conclude
+4. **Sample Coverage Matrix** — 12 datasets × 10 timepoints; tap any cell for dataset, comparison method, caution
+5. **Communication Safety Check** — 10 claim cards; classify each as Supported / Monitoring Signal / Overclaim
+6. **Monitoring Planner** — toggle 3-day / 30-day / 180-day mission profiles
+7. **Voice Debrief** — approved-script reader, no overclaim insertion
+8. **Printable BioBrief** — single-page mission dossier, print-CSS export
+
+---
+
+## How to View
+
+**Easiest:** open the live demo at [body-in-orbit.vercel.app](https://body-in-orbit.vercel.app)
+
+**Run locally:**
+```bash
+git clone https://github.com/vishnumahesha/body-in-orbit
+cd body-in-orbit
+npm install
+npm run dev
+# → http://localhost:3000
+```
+
+**Reproduce the analysis:** see [analysis/methods_note.md](analysis/methods_note.md) for the OSDR data fetch pattern and notebook export.
+
+---
+
+## AI Usage
+
+Claude (Anthropic) was used as a tool for:
+- Translating technical findings into astronaut-facing language
+- Auditing every astronaut-facing line against the forbidden-terms list
+- Building interactive UI components
+
+Claude was **not** used to:
+- Generate biological claims
+- Interpret scientific significance
+- Decide perturbation scores
+- Determine evidence confidence
+
+Every score and every claim traces to a published OSDR dataset and a peer-reviewed paper. AI did not introduce conclusions the source data did not already support.
+
+---
+
+## Project Documents
+
+- [Proposal](docs/proposal.md) — problem statement and approach (Checkpoint 1 artifact)
+- [Design Philosophy](docs/DESIGN_PHILOSOPHY.md) — communication-safety design rules
 - [Methods Note](docs/METHODS_NOTE.md) — data pipeline, scoring, AI usage, limitations
 - [Evidence Ledger](docs/EVIDENCE_LEDGER.md) — every claim traced to dataset and source
 
-## Tech Stack
+---
 
-- Next.js 14 (App Router)
-- React 18 + Framer Motion
-- TypeScript
-- Tailwind CSS
-- Three.js / React Three Fiber (background scene)
-- Vercel (deployment)
+## Stack
 
-## AI Usage Statement
-
-AI (Claude) was used to translate technical findings into astronaut-facing language, audit wording for overclaims, and build interactive UI components. AI did not generate scientific claims, interpret biological significance, or decide perturbation scores. See [Methods Note](docs/METHODS_NOTE.md) for details.
-
-## Thesis
-
-> The astronaut landed in three days. The biology did not land all at once.
-
-> Clear to communicate. Not clear to overclaim.
+Next.js 14 (App Router) · React 18 · TypeScript · Tailwind · Framer Motion · Three.js / R3F · Unicorn Studio · Vercel
 
 ---
 
-*Body in Orbit does not diagnose astronauts, predict disease, or determine flight readiness. It shows how molecular data from short-duration spaceflight can become a clearer mission briefing.*
+## License
+
+MIT — see [LICENSE](LICENSE)
+
+---
+
+> **Cleared for communication. Not cleared for overclaiming.**
+> 
