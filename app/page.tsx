@@ -133,45 +133,8 @@ function HomeContent() {
             <SignatureSlopeChart />
           </Section>
 
-          {/* Section 3: Mission framing */}
-          <Section eyebrow="03 · Mission framing">
-            <h2 className="font-space-grotesk text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-2">
-              The mission is no longer only about rockets.
-            </h2>
-            <h2 className="font-space-grotesk text-4xl md:text-5xl font-bold text-[#06B6D4] mb-10">
-              It is about biology.
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-4">
-              {[
-                { label: "Mission", value: "Inspiration4" },
-                { label: "Crew", value: "4 civilians" },
-                { label: "Duration", value: "3 days" },
-                { label: "Altitude", value: "~585 km" },
-                { label: "Data source", value: "NASA OSDR / SOMA" },
-                { label: "Objective", value: "Translate omics into monitoring" },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="bg-[#05070F] border border-[#1E293B] rounded-xl p-5"
-                >
-                  <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#64748B] mb-1">
-                    {item.label}
-                  </div>
-                  <div className="font-space-grotesk text-lg text-[#F8FAFC]">
-                    {item.value}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-
-          {/* Section 4: Animated radial chart — phase detail */}
-          <Section eyebrow="04 · Domain readout — Phase detail">
+          {/* Section 3: Animated radial chart — phase detail */}
+          <Section eyebrow="03 · Domain readout — Phase detail">
             <BriefingHeader />
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-4">
               Phase detail.
@@ -184,8 +147,8 @@ function HomeContent() {
             </div>
           </Section>
 
-          {/* Section 5: Evidence drawers */}
-          <Section eyebrow="05 · Evidence receipts">
+          {/* Section 4: Evidence drawers */}
+          <Section eyebrow="04 · Evidence receipts">
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-3">
               Every domain card opens its receipts.
             </h2>
@@ -197,16 +160,16 @@ function HomeContent() {
             <EvidenceDrawers />
           </Section>
 
-          {/* Section 6: Sample coverage matrix */}
-          <Section eyebrow="06 · Coverage matrix">
+          {/* Section 5: Sample coverage matrix */}
+          <Section eyebrow="05 · Coverage matrix">
             <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-8 leading-relaxed">
               This grid shows what was actually sampled. Empty cells are not design gaps; they mark where that data layer was not collected.
             </p>
             <SampleCoverageMatrix />
           </Section>
 
-          {/* Section 7: Communication Safety Check */}
-          <Section eyebrow="07 · Communication Safety Check">
+          {/* Section 6: Communication Safety Check */}
+          <Section eyebrow="06 · Communication Safety Check">
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-6">
               The hardest part is not seeing the signal.{" "}
               <span className="text-[#94A3B8]">It is knowing what the signal does not prove.</span>
@@ -214,23 +177,23 @@ function HomeContent() {
             <ClaimCourt />
           </Section>
 
-          {/* Section 8: Monitoring planner */}
-          <Section eyebrow="08 · Monitoring planner">
+          {/* Section 7: Monitoring planner */}
+          <Section eyebrow="07 · Monitoring planner">
             <MonitoringPlanner />
           </Section>
 
-          {/* Section 9: Voice debrief */}
-          <Section eyebrow="09 · Voice debrief">
+          {/* Section 8: Voice debrief */}
+          <Section eyebrow="08 · Voice debrief">
             <VoiceDebrief />
           </Section>
 
-          {/* Section 10: Printable biobrief */}
-          <Section eyebrow="10 · Printable biobrief">
+          {/* Section 9: Printable biobrief */}
+          <Section eyebrow="09 · Printable biobrief">
             <PrintableBiobrief />
           </Section>
 
-          {/* Section 11: Closing */}
-          <Section eyebrow="11 · Boundary">
+          {/* Section 10: Closing */}
+          <Section eyebrow="10 · Boundary">
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-6">
               A responsible report knows where to stop.
             </h2>
