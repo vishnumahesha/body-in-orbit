@@ -21,6 +21,7 @@ import { MonitoringPlanner } from "@/components/planner/MonitoringPlanner";
 import { VoiceDebrief } from "@/components/voice/VoiceDebrief";
 import { PrintableBiobrief } from "@/components/biobrief/PrintableBiobrief";
 import { PersonalDebrief } from "@/components/debrief/PersonalDebrief";
+import { MissionQuestionsBar } from "@/components/mission/MissionQuestionsBar";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -109,6 +110,10 @@ function HomeContent() {
       </div>
 
       <div className="relative z-10">
+        <MissionQuestionsBar />
+      </div>
+
+      <div className="relative z-10">
         {/* Section 1: Crew Selector — centerpiece */}
         <Section eyebrow="01 · Crew Selector">
           <div data-section="crew">
@@ -120,6 +125,7 @@ function HomeContent() {
       <div className="relative z-10">
 
           {/* Section 2: Signature slope chart — primary figure */}
+          <div id="living-baseline">
           <Section>
             <div className="font-mono text-xs tracking-[0.2em] text-cyan-400 mb-2">
               02 · THE LIVING BASELINE · TRACK 3 SIGNATURE FIGURE
@@ -136,6 +142,7 @@ function HomeContent() {
             </p>
             <SignatureSlopeChart />
           </Section>
+          </div>
 
           {/* Section 3: Animated radial chart — phase detail */}
           <Section eyebrow="03 · Domain readout — Phase detail">
@@ -152,6 +159,7 @@ function HomeContent() {
           </Section>
 
           {/* Section 4: Personal debrief */}
+          <div id="personal-debrief">
           <Section eyebrow="04 · Personal debrief">
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-2">
               What this means for the crew member it&apos;s addressed to.
@@ -161,6 +169,7 @@ function HomeContent() {
             </p>
             <PersonalDebrief />
           </Section>
+          </div>
 
           {/* Section 5: Evidence drawers */}
           <div id="evidence-receipts">
@@ -195,9 +204,11 @@ function HomeContent() {
           </Section>
 
           {/* Section 8: Monitoring planner */}
+          <div id="monitoring-planner">
           <Section eyebrow="08 · Monitoring planner">
             <MonitoringPlanner />
           </Section>
+          </div>
 
           {/* Section 9: Voice debrief */}
           <Section eyebrow="09 · Voice debrief">

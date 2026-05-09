@@ -18,7 +18,7 @@ export const personalDebriefs: Record<CrewId, DebriefEntry> = {
   C001: {
     readiness:  "Your baseline placed you within crew range on all five domains.",
     risks:      "At FD2 (day 2 of the flight) your immune markers began shifting. By R+1 (one day after landing), cytokines (immune messenger proteins) peaked above crew average.",
-    monitoring: "Extended monitoring through R+194 (~6 months after landing) is recommended for your immune domain.",
+    monitoring: "For this briefing, immune monitoring would be prioritized through R+194 (~6 months after landing).",
     comparison: "Your immune perturbation (shift from your own baseline) ranked highest among crew members at R+1.",
   },
   C002: {

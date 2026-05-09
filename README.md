@@ -120,16 +120,19 @@ Three principles. Full document at [docs/DESIGN_PHILOSOPHY.md](docs/DESIGN_PHILO
 
 ## Interactive Components
 
-The live site has eight interactive sections, each tied to evidence:
+The live site has eleven interactive sections, each tied to evidence:
 
-1. **Crew Selector** — pick C001–C004; entire site retargets to that crew's baseline-relative report
-2. **The Living Baseline** — animated radial chart with phase explanation panel
-3. **Evidence Drawers** — per-domain receipts: claim, evidence, q-values, sample size, do-not-conclude
-4. **Sample Coverage Matrix** — 12 datasets × 10 timepoints; tap any cell for dataset, comparison method, caution
-5. **Communication Safety Check** — 10 claim cards; classify each as Supported / Monitoring Signal / Overclaim
-6. **Monitoring Planner** — toggle 3-day / 30-day / 180-day mission profiles
-7. **Voice Debrief** — approved-script reader, no overclaim insertion
-8. **Printable BioBrief** — single-page mission dossier, print-CSS export
+1. **Mission Questions Bar** — four hackathon questions mapped to navigation targets; orients judges instantly
+2. **Crew Selector** — pick C001–C004; entire site retargets to that crew's baseline-relative report
+3. **The Living Baseline** — slope chart across six mission phases; animated radial phase detail
+4. **Personal Debrief** — per-crew Q&A framed around mission planning, not clinical readiness
+5. **Evidence Drawers** — per-domain receipts: claim, evidence, q-values, sample size, do-not-conclude
+6. **Sample Coverage Matrix** — 12 datasets × 10 timepoints; clearly marks collected data, differential anchors, and gaps
+7. **Communication Safety Check** — 10 claim cards; classify each as Supported / Monitoring Signal / Overclaim
+8. **Monitoring Planner** — toggle 3-day / 30-day / 180-day mission profiles
+9. **Voice Debrief** — approved-script reader, no overclaim insertion
+10. **Printable BioBrief** — single-page mission dossier, print-CSS export
+11. **Boundary** — explicit statement of what the report does not claim
 
 ---
 

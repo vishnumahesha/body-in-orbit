@@ -5,10 +5,10 @@ import { useCrew } from "@/lib/crewContext";
 import { personalDebriefs, crewRoles, type CrewId } from "./personalDebriefData";
 
 const QUESTIONS: { key: keyof typeof personalDebriefs.C001; label: string }[] = [
-  { key: "readiness",  label: "Was I ready?" },
-  { key: "risks",      label: "What signals emerged?" },
-  { key: "monitoring", label: "What needs monitoring?" },
-  { key: "comparison", label: "How do I compare?" },
+  { key: "readiness",  label: "What does my biology say about future mission planning?" },
+  { key: "risks",      label: "What health signals might need attention during a mission?" },
+  { key: "monitoring", label: "Which biological signals should be monitored in orbit?" },
+  { key: "comparison", label: "How does my profile compare with the other crew members?" },
 ];
 
 export function PersonalDebrief() {
