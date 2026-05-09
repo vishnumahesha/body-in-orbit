@@ -108,7 +108,7 @@ export function CrewSelector() {
               />
 
               {portraitId && (
-                <div className="aspect-[3/4] w-full overflow-hidden rounded-lg mb-4 bg-black">
+                <div className="aspect-[3/4] w-full overflow-hidden rounded-lg mb-10 bg-black">
                   <UnicornScene
                     projectId={portraitId}
                     fallbackLabel={p.displayLabel}
