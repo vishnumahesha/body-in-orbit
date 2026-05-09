@@ -34,7 +34,7 @@ export function HeroBackground() {
         if (!us) return;
         const scene = await us.addScene({
           elementId: "unicorn-bg",
-          projectId: "f930H2fgrDSWGwbXCGWv",
+          projectId: "vTtg6cYGp5MS5zwVPUXn",
           scale: 0.5,
           dpi: 1,
           fps: 30,
