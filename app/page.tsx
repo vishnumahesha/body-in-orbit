@@ -75,8 +75,7 @@ function HomeContent() {
 
   return (
     <div className="min-h-screen bg-[#000000]">
-        <HeroBackground />
-      
+      {!briefingStarted && <HeroBackground />}
 
       <div className="relative z-10">
         <MissionStart onBegin={() => setBriefingStarted(true)} />
