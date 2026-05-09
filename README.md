@@ -7,6 +7,8 @@
 🚀 **Live demo:** [body-in-orbit.vercel.app](https://body-in-orbit.vercel.app)
 📂 **Repo:** [github.com/vishnumahesha/body-in-orbit](https://github.com/vishnumahesha/body-in-orbit)
 
+The live experience opens with a monitor-style mission console, then routes into a 7-slide scroll-driven Mission Summary before the crew debrief dashboard. The story explains why the data matters, why raw omics data is hard to communicate safely, and why every claim needs an evidence boundary.
+
 ---
 
 ## Headline Finding
@@ -120,19 +122,20 @@ Three principles. Full document at [docs/DESIGN_PHILOSOPHY.md](docs/DESIGN_PHILO
 
 ## Interactive Components
 
-The live site has eleven interactive sections, each tied to evidence:
+The live site has a scroll-driven mission summary plus eleven evidence-linked dashboard sections:
 
-1. **Mission Questions Bar** — four hackathon questions mapped to navigation targets; orients judges instantly
-2. **Crew Selector** — pick C001–C004; entire site retargets to that crew's baseline-relative report
-3. **The Living Baseline** — slope chart across six mission phases; animated radial phase detail
-4. **Personal Debrief** — per-crew Q&A framed around mission planning, not clinical readiness
-5. **Evidence Drawers** — per-domain receipts: claim, evidence, q-values, sample size, do-not-conclude
-6. **Sample Coverage Matrix** — 12 datasets × 10 timepoints; clearly marks collected data, differential anchors, and gaps
-7. **Communication Safety Check** — 10 claim cards; classify each as Supported / Monitoring Signal / Overclaim
-8. **Monitoring Planner** — toggle 3-day / 30-day / 180-day mission profiles
-9. **Voice Debrief** — approved-script reader, no overclaim insertion
-10. **Printable BioBrief** — single-page mission dossier, print-CSS export
-11. **Boundary** — explicit statement of what the report does not claim
+1. **Mission Summary** — 7-slide scroll story explaining the mission, sampling timeline, data overload problem, and why communication safety matters.
+2. **Mission Questions Bar** — maps the hackathon questions directly to the relevant dashboard sections.
+3. **Crew Selector** — choose C001–C004; the site retargets to that crew member's baseline-relative report.
+4. **The Living Baseline** — signature slope chart showing five biological domains across mission phases.
+5. **Phase Detail** — animated radial chart with phase-level explanation.
+6. **Personal Debrief** — crew-facing explanation of what changed, what needs monitoring, and what the data cannot prove.
+7. **Evidence Receipts** — per-domain receipts: claim, evidence, sample type, timepoint, score reasoning, and do-not-conclude boundary.
+8. **Sample Coverage Matrix** — 12 datasets × 10 timepoints; clearly marks collected data, differential anchors, and gaps.
+9. **Communication Safety Check** — claim-classification interaction: Supported / Monitoring Signal / Overclaim.
+10. **Monitoring Planner** — compares 3-day, 30-day, and 180-day monitoring priorities as planning scenarios, not forecasts.
+11. **Voice Debrief** — approved-script reader with constrained language.
+12. **Printable BioBrief** — single-page mission dossier with print-CSS export.
 
 ---
 
@@ -160,11 +163,7 @@ Claude (Anthropic) was used as a tool for:
 - Auditing every astronaut-facing line against the forbidden-terms list
 - Building interactive UI components
 
-Claude was **not** used to:
-- Generate biological claims
-- Interpret scientific significance
-- Decide perturbation scores
-- Determine evidence confidence
+Claude was used to draft and audit interface language, but biological claims were constrained to the evidence ledger, OSDR datasets, and cited SOMA papers.
 
 Every score and every claim traces to a published OSDR dataset and a peer-reviewed paper. AI did not introduce conclusions the source data did not already support.
 
