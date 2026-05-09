@@ -30,7 +30,7 @@ SVG radar with 5 biological domains animated across 6 mission phases (Baseline â
 10 real-shaped claims about the data. User classifies each as Supported, Monitoring Only, or Overclaim. Reveal shows the verdict, evidence source, safer wording, and what should NOT be concluded. Teaches the n=4 constraint through interaction.
 
 ### 4. Evidence Receipt Drawers
-5 expandable domain cards. Click to open: technical finding, astronaut-safe wording, sample types, timepoints, score reasoning, and explicit non-claims. Every receipt is traceable to an OSD dataset.
+5 expandable domain cards. Click to open: technical finding, astronaut-facing wording, sample types, timepoints, score reasoning, and explicit non-claims. Every receipt is traceable to an OSD dataset.
 
 ### 5. Sample Coverage Matrix
 12 datasets x 10 timepoints. Three states: collected, differential anchor, gap. Hover for dataset metadata, comparison method, and caution. Shows where the data exists and where it does not.
@@ -81,7 +81,7 @@ Every astronaut-facing sentence uses: signal, shift, perturbation, baseline, rec
 
 ## AI Usage Statement
 
-AI (Claude) was used to translate technical findings into astronaut-safe language, audit wording for overclaims, and build interactive UI components. AI did not generate scientific claims, interpret biological significance, or decide perturbation scores. See [Methods Note](docs/METHODS_NOTE.md) for details.
+AI (Claude) was used to translate technical findings into astronaut-facing language, audit wording for overclaims, and build interactive UI components. AI did not generate scientific claims, interpret biological significance, or decide perturbation scores. See [Methods Note](docs/METHODS_NOTE.md) for details.
 
 ## Thesis
 

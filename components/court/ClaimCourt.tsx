@@ -51,9 +51,6 @@ export function ClaimCourt() {
       {/* counter rail */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-3">
-          <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#64748B]">
-            Claim {index + 1} of {claims.length}
-          </div>
           <div className="flex gap-1">
             {claims.map((c, i) => {
               const p = picked[c.id];
@@ -79,8 +76,8 @@ export function ClaimCourt() {
             })}
           </div>
         </div>
-        <div className="font-mono text-[11px] tracking-[0.2em] text-[#94A3B8]">
-          Review progress: {correctCount} / {claims.length}
+        <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#94A3B8]">
+          Submitted: {Object.keys(picked).length} / {claims.length}
         </div>
       </div>
 

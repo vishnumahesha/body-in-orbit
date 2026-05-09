@@ -122,11 +122,11 @@ export function AnimatedRadialChart({
           onClick={() => setAutoplay((v) => !v)}
           className={`font-mono text-[11px] uppercase tracking-[0.18em] px-3 py-2 rounded-xl border transition-colors ${
             autoplay
-              ? "border-[#06B6D4]/60 text-[#06B6D4] bg-[#06B6D4]/[0.05]"
+              ? "border-[#06B6D4] text-[#06B6D4] bg-[#06B6D4]/[0.10] ring-1 ring-[#06B6D4]/40 shadow-[0_0_18px_rgba(6,182,212,0.25)]"
               : "border-[#1E293B] text-[#94A3B8] hover:border-[#334155]"
           }`}
         >
-          {autoplay ? "■ Pause loop" : "▶ Loop phases"}
+          {autoplay ? "❙❙ Stop loop" : "▶ Loop phases"}
         </button>
       </div>
 
@@ -147,7 +147,7 @@ export function AnimatedRadialChart({
         </div>
 
         <svg
-          viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
+          viewBox={`-40 0 ${SVG_SIZE + 80} ${SVG_SIZE}`}
           className="relative z-10 w-full h-full"
           preserveAspectRatio="xMidYMid meet"
         >

@@ -22,7 +22,7 @@ export function PrintableBiobrief() {
       <div className="flex items-end justify-between gap-4 flex-wrap print:hidden">
         <div>
           <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#64748B] mb-2">
-            Printable biobrief · take it offline
+            Take it offline · single-page debrief, every claim sourced
           </div>
           <h3 className="font-space-grotesk text-2xl md:text-3xl font-bold text-[#F8FAFC]">
             One report card. Five domains.{" "}
@@ -53,18 +53,12 @@ export function PrintableBiobrief() {
           }}
         />
 
+        <div className="h-1.5 w-full bg-gradient-to-r from-[#9F2D25] via-[#9F2D25]/60 to-transparent mb-4" />
         <header className="relative grid md:grid-cols-[1fr_auto] gap-4 items-end pb-6 border-b mb-8"
           style={{
             borderImage: "linear-gradient(90deg, var(--mission-red), transparent) 1",
           }}
         >
-          <div
-            className="absolute inset-x-0 top-0 h-1"
-            style={{
-              background: "linear-gradient(90deg, var(--mission-red), transparent)",
-              opacity: 0.6,
-            }}
-          />
           <div>
             <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#06B6D4] mb-2">
               Body in Orbit · Astronaut biological debrief

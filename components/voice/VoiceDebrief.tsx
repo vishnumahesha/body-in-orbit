@@ -21,13 +21,20 @@ export function VoiceDebrief() {
       setSupported(false);
       return;
     }
+    const ALLOWED = ["Samantha", "Alex", "Daniel", "Karen", "Moira", "Tessa", "Google US English"];
     const refresh = () => {
-      const list = window.speechSynthesis.getVoices();
+      const allVoices = window.speechSynthesis.getVoices();
+      const filtered = allVoices.filter(
+        (v) => v.lang.startsWith("en") && ALLOWED.includes(v.name)
+      );
+      const list =
+        filtered.length > 0
+          ? filtered
+          : allVoices.filter((v) => v.lang.startsWith("en") && v.default).slice(0, 3);
       setVoices(list);
       if (!voiceURI && list.length) {
-        // prefer an English neutral voice
         const preferred =
-          list.find((v) => /en-(US|GB)/i.test(v.lang) && /Google|Samantha|Daniel|Alex/i.test(v.name)) ||
+          list.find((v) => v.name === "Samantha") ||
           list.find((v) => /^en/i.test(v.lang)) ||
           list[0];
         if (preferred) setVoiceURI(preferred.voiceURI);
@@ -40,7 +47,7 @@ export function VoiceDebrief() {
     };
   }, [voiceURI]);
 
-  // stop on crew change
+  // unmount cleanup — cancel any speech queued/in-flight
   useEffect(() => {
     return () => {
       if (typeof window !== "undefined" && window.speechSynthesis) {
@@ -49,12 +56,18 @@ export function VoiceDebrief() {
     };
   }, []);
 
+  // stop on crew change
   useEffect(() => {
     if (typeof window === "undefined" || !window.speechSynthesis) return;
     window.speechSynthesis.cancel();
     setStatus("idle");
     setActiveLine(-1);
     queueRef.current = [];
+    return () => {
+      if (typeof window !== "undefined" && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
   }, [profile.id]);
 
   const play = () => {
@@ -128,7 +141,7 @@ export function VoiceDebrief() {
               className="bg-black/60 border border-[#1E293B] rounded-lg font-mono text-[11px] text-[#94A3B8] px-2 py-1.5"
               aria-label="Voice"
             >
-              {voices.slice(0, 24).map((v) => (
+              {voices.map((v) => (
                 <option key={v.voiceURI} value={v.voiceURI}>
                   {v.name} · {v.lang}
                 </option>

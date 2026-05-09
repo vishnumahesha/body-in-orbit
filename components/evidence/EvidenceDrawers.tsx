@@ -120,7 +120,7 @@ export function EvidenceDrawers() {
 
                       <div className="rounded-xl border border-[#06B6D4]/25 bg-[#06B6D4]/[0.04] p-4">
                         <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#06B6D4] mb-2">
-                          Astronaut-safe wording
+                          Astronaut-facing wording
                         </div>
                         <p className="font-inter text-sm text-[#F8FAFC] leading-relaxed italic">
                           &ldquo;{e.astronautSafeWording}&rdquo;

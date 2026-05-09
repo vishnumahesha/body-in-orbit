@@ -40,7 +40,7 @@ export const crew: Record<string, CrewProfile> = {
     publicName: "Crew Member C002",
     missionRole: "Medical Officer",
     displayLabel: "C002",
-    callsign: "C002 · MO",
+    callsign: "C002 · MED",
     ageBand: "Age band 25-34",
     bioFocus: "Brief focus: oxidative recovery context",
     bioFocusBlurb:
@@ -84,7 +84,7 @@ export const crew: Record<string, CrewProfile> = {
     publicName: "Crew Member C004",
     missionRole: "Mission Specialist",
     displayLabel: "C004",
-    callsign: "C004 · MS",
+    callsign: "C004 · SPC",
     ageBand: "Age band 35-44",
     bioFocus: "Brief focus: microbiome and immune context",
     bioFocusBlurb:

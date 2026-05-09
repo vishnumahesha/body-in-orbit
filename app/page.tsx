@@ -93,7 +93,7 @@ function RadialChartWithExplanation() {
 function HomeContent() {
   return (
     <div className="min-h-screen bg-[#000000] relative">
-      <div className="absolute top-0 left-0 right-0 h-screen z-0 opacity-25 pointer-events-none overflow-hidden">
+      <div id="hero-bg" className="absolute top-0 left-0 right-0 h-screen z-0 opacity-25 pointer-events-none overflow-hidden">
         <HeroBackground />
       </div>
 
@@ -172,7 +172,7 @@ function HomeContent() {
             </h2>
             <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-10 leading-relaxed">
               Click any card. The receipt drawer below pulls the technical finding, the
-              astronaut-safe wording, the sample types, the timepoints, the score reasoning, and
+              astronaut-facing wording, the sample types, the timepoints, the score reasoning, and
               what we are explicitly <em>not</em> claiming.
             </p>
             <EvidenceDrawers />
@@ -188,15 +188,10 @@ function HomeContent() {
 
           {/* Section 6: Communication Safety Check */}
           <Section eyebrow="06 · Communication Safety Check">
-            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-2">
-              Communication Safety Check
+            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-6">
+              The hardest part is not seeing the signal.{" "}
+              <span className="text-[#94A3B8]">It is knowing what the signal does not prove.</span>
             </h2>
-            <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#64748B] mb-6">
-              Claim Court
-            </div>
-            <h3 className="font-space-grotesk text-2xl md:text-3xl text-[#94A3B8] mb-10">
-              The hardest part is not seeing the signal. It is knowing what the signal does not prove.
-            </h3>
             <ClaimCourt />
           </Section>
 
@@ -245,10 +240,14 @@ function HomeContent() {
                   typeof window !== "undefined" &&
                   window.scrollTo({ top: 0, behavior: "smooth" })
                 }
-                className="bg-white/5 border border-[#1E293B] text-[#94A3B8] px-6 py-3 rounded-xl font-mono text-sm hover:border-[#94A3B8] transition-colors"
+                className="bg-white/5 border border-[#1E293B] text-[#94A3B8] px-6 py-3 rounded-xl font-mono text-sm hover:bg-cyan-500/10 hover:border-[#94A3B8] transition-colors"
               >
                 Review Evidence
               </button>
+            </div>
+
+            <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#06B6D4] mt-6 pt-4 border-t border-[#1E293B]/30">
+              Cleared for communication. Not cleared for overclaiming.
             </div>
           </Section>
         </div>

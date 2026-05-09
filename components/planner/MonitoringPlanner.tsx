@@ -75,7 +75,7 @@ export function MonitoringPlanner() {
       <div className="flex items-end justify-between gap-4 flex-wrap">
         <div>
           <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#64748B] mb-2">
-            Monitoring planner · prioritization preview
+            Prioritization preview · longer missions, layered monitoring
           </div>
           <h3 className="font-space-grotesk text-2xl md:text-3xl font-bold text-[#F8FAFC] max-w-3xl">
             Different missions need{" "}

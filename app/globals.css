@@ -98,6 +98,12 @@ pre {
   }
 }
 
+#hero-bg,
+#hero-bg canvas,
+#hero-bg > div {
+  position: absolute !important;
+}
+
 @media print {
   html::before {
     display: none !important;

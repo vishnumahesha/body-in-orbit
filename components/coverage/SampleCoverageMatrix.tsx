@@ -107,7 +107,8 @@ export function SampleCoverageMatrix() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-[#1E293B] bg-[#05070F] p-5 overflow-x-auto">
+      <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+       <div className="rounded-2xl border border-[#1E293B] bg-[#05070F] p-5">
         <div className="min-w-[820px]">
           {/* header row */}
           <div className="grid grid-cols-[260px_repeat(10,1fr)] gap-2 mb-3">
@@ -165,6 +166,7 @@ export function SampleCoverageMatrix() {
                       <button
                         key={tp}
                         type="button"
+                        onClick={() => setHovered({ row: d.id, tp })}
                         onMouseEnter={() => setHovered({ row: d.id, tp })}
                         onMouseLeave={() => setHovered(null)}
                         onFocus={() => setHovered({ row: d.id, tp })}
@@ -202,7 +204,10 @@ export function SampleCoverageMatrix() {
             })}
           </div>
         </div>
+       </div>
       </div>
+
+      <p className="md:hidden text-[11px] font-mono text-cyan-400/60 mt-3">↔ swipe to see all timepoints</p>
 
       {/* tooltip */}
       <div className="min-h-[110px]">
@@ -263,7 +268,7 @@ export function SampleCoverageMatrix() {
               exit={{ opacity: 0 }}
               className="font-mono text-[11px] text-[#475569]"
             >
-              Hover or focus any cell to inspect its dataset, comparison method, and caution.
+              Tap, hover, or focus any cell to inspect its dataset, comparison method, and caution.
             </motion.p>
           )}
         </AnimatePresence>

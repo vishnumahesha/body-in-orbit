@@ -45,7 +45,7 @@ export function MissionStart({ onBegin }: MissionStartProps) {
           transition={{ delay: 0.7, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="font-space-grotesk text-lg sm:text-xl md:text-2xl text-[#94A3B8] font-light tracking-wide mb-12"
         >
-          Mission Readiness Briefing
+          A communication-safety prototype for post-flight molecular debriefs.
         </motion.div>
 
         {/* Body text */}

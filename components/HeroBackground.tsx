@@ -58,7 +58,7 @@ export function HeroBackground() {
     <div
       id="unicorn-bg"
       ref={containerRef}
-      className="fixed inset-0 z-0 w-full h-screen pointer-events-none"
+      className="absolute inset-0 z-0 w-full h-screen pointer-events-none"
       style={{ width: "100%", height: "100vh" }}
     />
   );

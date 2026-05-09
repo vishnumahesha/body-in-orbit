@@ -45,7 +45,7 @@ Every astronaut-facing sentence passes through:
 
 ### AI Usage
 AI (Claude) was used to:
-- Translate technical methods sections into astronaut-safe language
+- Translate technical methods sections into astronaut-facing language
 - Audit claim wording for overclaims
 - Build interactive UI components from design specifications
 
