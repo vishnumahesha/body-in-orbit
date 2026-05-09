@@ -4,7 +4,20 @@
 
 **Track 3 — Communication & Visualization** · Torchlight Summit Biosovereignty Hackathon 2026 · Team 3 · Vishnu Mahesha (Rouse High School / Alpha X Program)
 
-🚀 **Live demo:** [body-in-orbit.vercel.app](https://body-in-orbit.vercel.app)
+## Judges: Start Here
+
+**Primary review link:** [Open the live demo → body-in-orbit.vercel.app](https://body-in-orbit.vercel.app)
+
+Recommended review path:
+
+1. Click **Run Mission Debrief** on the monitor screen.
+2. Scroll through the 7-slide **Mission Summary**.
+3. Click **Open Crew Debriefs**.
+4. Select any crew member profile.
+5. Review **The Living Baseline**, **Evidence Receipts**, **Communication Safety Check**, and **Printable BioBrief**.
+
+The GitHub repo documents the source data, methods, evidence ledger, and design rules. The live demo is the primary experience.
+
 📂 **Repo:** [github.com/vishnumahesha/body-in-orbit](https://github.com/vishnumahesha/body-in-orbit)
 
 The live experience opens with a monitor-style mission console, then routes into a 7-slide scroll-driven Mission Summary before the crew debrief dashboard. The story explains why the data matters, why raw omics data is hard to communicate safely, and why every claim needs an evidence boundary.
