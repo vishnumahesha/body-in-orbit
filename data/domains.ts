@@ -1,4 +1,4 @@
-import { BiologicalDomain, MissionPhase } from "./types";
+import { BiologicalDomain } from "./types";
 
 export const domains: Record<string, BiologicalDomain> = {
   immune: {
@@ -544,7 +544,7 @@ export const domains: Record<string, BiologicalDomain> = {
         evidenceStatus: "direct_measured",
         confidence: "high",
         nodeFill: "filled",
-        label: "FD1-3",
+        label: "FD2-FD3",
       },
       r_plus_1: {
         phase: "r_plus_1",

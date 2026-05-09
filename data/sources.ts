@@ -59,7 +59,7 @@ export const sources: Record<string, SourceRef> = {
   },
   "park-2024-skin": {
     id: "park-2024-skin",
-    title: "Spatial multi-omics of human skin reveals KRAS and inflammatory signaling drive distinct keratinocyte states in hidradenitis suppurativa",
+    title: "Spatial multi-omics of human skin reveals KRAS and inflammatory responses to spaceflight",
     authorsShort: "Park et al.",
     journal: "Nature Communications",
     year: 2024,

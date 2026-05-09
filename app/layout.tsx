@@ -21,8 +21,22 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Body in Orbit — Mission Readiness Briefing",
-  description: "Interactive molecular monitoring brief for astronaut health using Inspiration4 spaceflight data",
+  metadataBase: new URL("https://body-in-orbit.vercel.app"),
+  title: "Body in Orbit — Astronaut Molecular Debrief",
+  description: "Interactive post-flight molecular debrief built from Inspiration4 omics data.",
+  openGraph: {
+    title: "Body in Orbit",
+    description: "The astronaut landed in three days. The biology did not land all at once.",
+    url: "https://body-in-orbit.vercel.app",
+    images: [{ url: "/figures/living-baseline.png", width: 1920, height: 1080 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Body in Orbit",
+    description: "Communication-safety prototype for post-flight molecular debriefs.",
+    images: ["/figures/living-baseline.png"],
+  },
 };
 
 export default function RootLayout({

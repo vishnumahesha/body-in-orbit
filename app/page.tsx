@@ -12,7 +12,7 @@ import { CrewProvider, useCrew } from "@/lib/crewContext";
 import { CrewSelector } from "@/components/crew/CrewSelector";
 import { AnimatedRadialChart } from "@/components/radial/AnimatedRadialChart";
 import { PhaseExplanationPanel } from "@/components/radial/PhaseExplanationPanel";
-import { SignatureSlopeChart } from "@/components/radial/SignatureSlopeChart";
+import { SignatureSlopeChart } from "@/components/signature/SignatureSlopeChart";
 import { ClaimCourt } from "@/components/court/ClaimCourt";
 import type { MissionPhase } from "@/data/types";
 import { EvidenceDrawers } from "@/components/evidence/EvidenceDrawers";
@@ -118,8 +118,23 @@ function HomeContent() {
 
       <div className="relative z-10">
 
-          {/* Section 2: Mission framing */}
-          <Section eyebrow="02 · Mission framing">
+          {/* Section 2: Signature slope chart — primary figure */}
+          <Section>
+            <div className="font-mono text-xs tracking-[0.2em] text-cyan-400 mb-2">
+              02 · THE LIVING BASELINE · TRACK 3 SIGNATURE FIGURE
+            </div>
+            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-2">
+              Five domains. Six mission phases.{" "}
+              <span className="text-[#06B6D4]">The biology did not land all at once.</span>
+            </h2>
+            <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-8">
+              Distance from baseline is a perturbation score (0–3) — a communication score, not clinical severity. n=4. Per-crew, baseline-relative.
+            </p>
+            <SignatureSlopeChart />
+          </Section>
+
+          {/* Section 3: Mission framing */}
+          <Section eyebrow="03 · Mission framing">
             <h2 className="font-space-grotesk text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-2">
               The mission is no longer only about rockets.
             </h2>
@@ -155,25 +170,15 @@ function HomeContent() {
             </div>
           </Section>
 
-          {/* Section 3: Slope chart — primary signature figure */}
-          <Section eyebrow="03 · The Living Baseline · Track 3 Signature Figure">
-            <BriefingHeader />
-            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-2 mt-3">
-              Five domains.{" "}
-              <span className="text-[#06B6D4]">Six mission phases.</span>
-            </h2>
-            <p className="font-inter text-base text-[#94A3B8] mb-10">
-              The biology did not land all at once.
-            </p>
-            <SignatureSlopeChart />
-          </Section>
-
           {/* Section 4: Animated radial chart — phase detail */}
-          <Section eyebrow="04 · Domain readout — phase detail">
+          <Section eyebrow="04 · Domain readout — Phase detail">
             <BriefingHeader />
-            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-10">
-              Watch the body move.
+            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-4">
+              Phase detail.
             </h2>
+            <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-8">
+              Click any phase below to inspect domain-by-domain perturbation at that timepoint.
+            </p>
             <div data-export="radial-section">
               <RadialChartWithExplanation />
             </div>
@@ -244,10 +249,10 @@ function HomeContent() {
 
             <div className="flex gap-4 flex-wrap">
               <Link
-                href="/debrief"
+                href="/docs/METHODS_NOTE.md"
                 className="bg-[#06B6D4]/10 border border-[#06B6D4]/30 text-[#06B6D4] px-6 py-3 rounded-xl font-mono text-sm hover:bg-[#06B6D4]/20 transition-colors"
               >
-                Enter Crew Debrief →
+                Read Methods Note →
               </Link>
               <button
                 onClick={() =>

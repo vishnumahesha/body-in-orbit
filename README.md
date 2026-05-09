@@ -95,7 +95,7 @@ Forbidden terms anywhere in astronaut-facing copy: *diagnose, disease, abnormal,
 
 ## Source Papers
 
-All citations are 2024 SOMA consortium publications:
+Eight 2024 SOMA consortium publications:
 
 - Kim et al. *Nat Commun* 2024 — [10.1038/s41467-024-49211-2](https://doi.org/10.1038/s41467-024-49211-2) (immune)
 - Houerbi et al. *Nat Commun* 2024 — [10.1038/s41467-024-48841-w](https://doi.org/10.1038/s41467-024-48841-w) (secretome, recovery split)
@@ -104,6 +104,7 @@ All citations are 2024 SOMA consortium publications:
 - Park et al. *Nat Commun* 2024 — [10.1038/s41467-024-48625-2](https://doi.org/10.1038/s41467-024-48625-2) (skin spatial)
 - Overbey et al. *Nat Commun* 2024 — [10.1038/s41467-024-48806-z](https://doi.org/10.1038/s41467-024-48806-z) (SOMA)
 - Overbey et al. *Nature* 2024 — [10.1038/s41586-024-07639-y](https://doi.org/10.1038/s41586-024-07639-y) (SOMA flagship)
+- Grigorev et al. *Nat Commun* 2024 — [10.1038/s41467-024-48929-3](https://doi.org/10.1038/s41467-024-48929-3) (direct RNA sequencing)
 
 ---
 
