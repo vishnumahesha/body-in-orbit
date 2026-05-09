@@ -93,13 +93,16 @@ export function ClaimCourt() {
             animate={{ opacity: 1, rotateY: 0, y: 0 }}
             exit={{ opacity: 0, rotateY: 10, y: -12 }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="relative bg-[#05070F] border border-[#1E293B] rounded-3xl p-8 md:p-10 overflow-hidden"
+            className="relative bg-[#05070F] border rounded-3xl p-8 md:p-10 overflow-hidden shadow-[0_0_20px_var(--mission-red-glow)]"
+            style={{
+              borderImage: "linear-gradient(135deg, var(--mission-red), rgba(6,182,212,0.4)) 1",
+            }}
           >
             <div
               className="pointer-events-none absolute -inset-px rounded-3xl"
               style={{
                 background:
-                  "radial-gradient(120% 60% at 50% 0%, rgba(6,182,212,0.18), transparent 60%)",
+                  "radial-gradient(120% 60% at 50% 0%, rgba(6,182,212,0.12), var(--mission-red-soft) 70%, transparent 90%)",
               }}
             />
 

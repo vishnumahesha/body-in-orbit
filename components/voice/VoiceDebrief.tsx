@@ -102,7 +102,7 @@ export function VoiceDebrief() {
   };
 
   return (
-    <div className="rounded-3xl border border-[#1E293B] bg-[#05070F] p-6 md:p-8 space-y-6 relative overflow-hidden">
+    <div className="rounded-2xl border border-[#1E293B] bg-[#05070F] p-5 md:p-6 space-y-4 relative overflow-hidden max-w-4xl">
       <div
         className="pointer-events-none absolute -inset-px"
         style={{
@@ -113,10 +113,10 @@ export function VoiceDebrief() {
 
       <div className="relative flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#64748B] mb-1">
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#64748B] mb-1">
             Voice debrief · approved script
           </div>
-          <h3 className="font-space-grotesk text-2xl text-[#F8FAFC] leading-tight">
+          <h3 className="font-space-grotesk text-lg text-[#F8FAFC] leading-tight">
             Hear the {profile.displayLabel} brief in mission tone.
           </h3>
         </div>
@@ -181,7 +181,7 @@ export function VoiceDebrief() {
         </div>
       </div>
 
-      <div className="relative space-y-3">
+      <div className="relative space-y-2">
         {profile.voiceLines.map((line, i) => {
           const isActive = activeLine === i;
           return (

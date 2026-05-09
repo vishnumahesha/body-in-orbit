@@ -33,11 +33,25 @@ function polar(angleDeg: number, radius: number) {
 
 const SPRING = { type: "spring", stiffness: 110, damping: 24, mass: 0.5 } as const;
 
-export function AnimatedRadialChart() {
+export function AnimatedRadialChart({
+  controlledPhase,
+  onPhaseChange,
+}: {
+  controlledPhase?: MissionPhase;
+  onPhaseChange?: (phase: MissionPhase) => void;
+} = {}) {
   const { profile } = useCrew();
-  const [phase, setPhase] = useState<MissionPhase>("r_plus_1");
+  const [internalPhase, setInternalPhase] = useState<MissionPhase>("r_plus_1");
   const [hovered, setHovered] = useState<DomainId | null>(null);
   const [autoplay, setAutoplay] = useState(false);
+
+  const phase = controlledPhase ?? internalPhase;
+  const setPhase = (newPhase: MissionPhase) => {
+    if (controlledPhase === undefined) {
+      setInternalPhase(newPhase);
+    }
+    onPhaseChange?.(newPhase);
+  };
 
   const domainArray = useMemo(() => Object.values(domains), []);
 
@@ -63,6 +77,7 @@ export function AnimatedRadialChart() {
       setPhase(PHASES[(idx + 1) % PHASES.length].id);
     }, 1800);
     return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoplay, phase]);
 
   return (

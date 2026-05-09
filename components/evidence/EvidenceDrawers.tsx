@@ -34,7 +34,7 @@ export function EvidenceDrawers() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.05 }}
             className={`relative rounded-2xl border overflow-hidden ${
-              isOpen ? "border-[var(--c)]/50 bg-[var(--c)]/[0.03]" : "border-[#1E293B] bg-[#05070F]"
+              isOpen ? "border-[var(--c)]/50 bg-[var(--c)]/[0.03] shadow-[0_0_16px_var(--mission-red-glow)]" : "border-[#1E293B] bg-[#05070F]"
             }`}
             style={{ ["--c" as never]: d.color }}
           >

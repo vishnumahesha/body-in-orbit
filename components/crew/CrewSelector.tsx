@@ -92,10 +92,10 @@ export function CrewSelector() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 * i, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -3 }}
-              className={`relative text-left rounded-2xl border p-5 overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#06B6D4]/40 transition-colors ${
+              className={`relative text-left rounded-2xl border p-5 overflow-hidden focus:outline-none focus:ring-2 transition-colors ${
                 isActive
-                  ? "border-[#06B6D4]/60 bg-[#06B6D4]/[0.04]"
-                  : "border-[#1E293B] bg-[#05070F] hover:border-[#334155]"
+                  ? "border-[#06B6D4]/60 bg-[#06B6D4]/[0.04] shadow-[0_0_20px_var(--mission-red-glow)] focus:ring-[#06B6D4]/40"
+                  : "border-[#1E293B] bg-[#05070F] hover:border-[#334155] focus:ring-[#06B6D4]/40"
               }`}
               aria-pressed={isActive}
             >

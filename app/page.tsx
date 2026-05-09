@@ -11,7 +11,9 @@ import { MissionStart } from "@/components/mission/MissionStart";
 import { CrewProvider, useCrew } from "@/lib/crewContext";
 import { CrewSelector } from "@/components/crew/CrewSelector";
 import { AnimatedRadialChart } from "@/components/radial/AnimatedRadialChart";
+import { PhaseExplanationPanel } from "@/components/radial/PhaseExplanationPanel";
 import { ClaimCourt } from "@/components/court/ClaimCourt";
+import type { MissionPhase } from "@/data/types";
 import { EvidenceDrawers } from "@/components/evidence/EvidenceDrawers";
 import { SampleCoverageMatrix } from "@/components/coverage/SampleCoverageMatrix";
 import { MonitoringPlanner } from "@/components/planner/MonitoringPlanner";
@@ -40,8 +42,15 @@ function Section({
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       variants={sectionVariants}
-      className="py-24 md:py-32 max-w-6xl mx-auto px-6"
+      className="py-24 md:py-32 max-w-6xl mx-auto px-6 relative"
     >
+      <div
+        className="absolute inset-x-0 top-0 h-px"
+        style={{
+          background: "linear-gradient(90deg, transparent, var(--mission-red), transparent)",
+          opacity: 0.4,
+        }}
+      />
       {eyebrow && (
         <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#06B6D4]/80 mb-6">
           {eyebrow}
@@ -70,45 +79,48 @@ function BriefingHeader() {
   );
 }
 
+function RadialChartWithExplanation() {
+  const [currentPhase, setCurrentPhase] = useState<MissionPhase>("r_plus_1");
+
+  return (
+    <div className="grid lg:grid-cols-[1fr_400px] gap-8 items-start">
+      <AnimatedRadialChart onPhaseChange={setCurrentPhase} />
+      <PhaseExplanationPanel phase={currentPhase} />
+    </div>
+  );
+}
+
 function HomeContent() {
   const [briefingStarted, setBriefingStarted] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#000000]">
-      {!briefingStarted && <HeroBackground />}
+      <div className="fixed inset-0 z-0 opacity-30 max-h-[40vh]">
+        <HeroBackground />
+      </div>
 
       <div className="relative z-10">
         <MissionStart onBegin={() => setBriefingStarted(true)} />
       </div>
 
+      <div className="relative z-10">
+        {/* Section 1: Crew Selector — centerpiece */}
+        <Section eyebrow="01 · Crew Selector">
+          <CrewSelector />
+        </Section>
+      </div>
+
       {briefingStarted && (
         <div className="relative z-10 opacity-0 animate-[fadeIn_0.6s_ease-out_0.3s_forwards]">
-          {/* Section 1: Crew Selector — centerpiece */}
-          <Section eyebrow="01 · Crew Selector">
-            <CrewSelector />
-          </Section>
 
           {/* Section 2: Mission framing */}
           <Section eyebrow="02 · Mission framing">
             <h2 className="font-space-grotesk text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-2">
               The mission is no longer only about rockets.
             </h2>
-            <h2 className="font-space-grotesk text-4xl md:text-5xl font-bold text-[#06B6D4] mb-8">
+            <h2 className="font-space-grotesk text-4xl md:text-5xl font-bold text-[#06B6D4] mb-10">
               It is about biology.
             </h2>
-
-            <div className="max-w-3xl mb-12">
-              <p className="font-inter text-lg text-[#94A3B8] leading-relaxed mb-6">
-                Future crews may travel for months or years beyond Earth. To prepare them safely,
-                mission teams need more than launch systems and habitats. They need to understand
-                how the human body responds to spaceflight.
-              </p>
-              <p className="font-inter text-lg text-[#94A3B8] leading-relaxed">
-                Inspiration4 gives us one of the deepest public molecular snapshots: four civilians,
-                sampled before, during, and after a three-day mission at roughly 585 kilometers
-                above Earth.
-              </p>
-            </div>
 
             <div className="grid md:grid-cols-3 gap-4">
               {[
@@ -140,22 +152,13 @@ function HomeContent() {
 
           {/* Section 3: Animated radial chart */}
           <Section eyebrow="03 · Domain readout">
-            <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 items-start mb-10">
-              <div>
-                <BriefingHeader />
-                <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mt-3">
-                  Five domains.{" "}
-                  <span className="text-[#06B6D4]">Six mission phases.</span>{" "}
-                  Watch the body move.
-                </h2>
-                <p className="font-inter text-base text-[#94A3B8] leading-relaxed mt-4 max-w-xl">
-                  Distance from center is a perturbation score from 0 to 3 — a communication score,
-                  not a clinical severity score. Phase buttons retime the entire chart; loop the
-                  phases or hover any node for plain-language context.
-                </p>
-              </div>
-              <AnimatedRadialChart />
-            </div>
+            <BriefingHeader />
+            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mt-3 mb-10">
+              Five domains.{" "}
+              <span className="text-[#06B6D4]">Six mission phases.</span>{" "}
+              Watch the body move.
+            </h2>
+            <RadialChartWithExplanation />
           </Section>
 
           {/* Section 4: Evidence drawers */}
@@ -173,22 +176,23 @@ function HomeContent() {
 
           {/* Section 5: Sample coverage matrix */}
           <Section eyebrow="05 · Coverage matrix">
+            <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-8 leading-relaxed">
+              This grid shows what was actually sampled. Empty cells are not design gaps; they mark where that data layer was not collected.
+            </p>
             <SampleCoverageMatrix />
           </Section>
 
-          {/* Section 6: Claim Court */}
-          <Section eyebrow="06 · Claim court">
-            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-3">
-              The hardest part is not seeing the signal.
+          {/* Section 6: Communication Safety Check */}
+          <Section eyebrow="06 · Communication Safety Check">
+            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-2">
+              Communication Safety Check
             </h2>
-            <h3 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#06B6D4] mb-6">
-              It is knowing what the signal does not prove.
+            <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#64748B] mb-6">
+              Claim Court
+            </div>
+            <h3 className="font-space-grotesk text-2xl md:text-3xl text-[#94A3B8] mb-10">
+              The hardest part is not seeing the signal. It is knowing what the signal does not prove.
             </h3>
-            <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-10 leading-relaxed">
-              Each card is a real-shaped claim about the data. Pick how it should be communicated,
-              then watch the verdict, source, safer wording, and the conclusions to{" "}
-              <span className="text-[#F87171]">not</span> reach.
-            </p>
             <ClaimCourt />
           </Section>
 

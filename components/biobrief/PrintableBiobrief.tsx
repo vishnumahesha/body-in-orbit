@@ -53,7 +53,18 @@ export function PrintableBiobrief() {
           }}
         />
 
-        <header className="relative grid md:grid-cols-[1fr_auto] gap-4 items-end pb-6 border-b border-[#1E293B] mb-8">
+        <header className="relative grid md:grid-cols-[1fr_auto] gap-4 items-end pb-6 border-b mb-8"
+          style={{
+            borderImage: "linear-gradient(90deg, var(--mission-red), transparent) 1",
+          }}
+        >
+          <div
+            className="absolute inset-x-0 top-0 h-1"
+            style={{
+              background: "linear-gradient(90deg, var(--mission-red), transparent)",
+              opacity: 0.6,
+            }}
+          />
           <div>
             <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#06B6D4] mb-2">
               Body in Orbit · Astronaut biological debrief
