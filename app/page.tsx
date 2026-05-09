@@ -101,12 +101,7 @@ function HomeContent() {
       </div>
 
       <div className="relative z-10">
-        <MissionStart onBegin={() => {
-          if (typeof window !== "undefined") {
-            const crewSection = document.querySelector('[data-section="crew"]');
-            crewSection?.scrollIntoView({ behavior: "smooth" });
-          }
-        }} />
+        <MissionStart />
       </div>
 
       <div className="relative z-10">
@@ -116,7 +111,7 @@ function HomeContent() {
       <div className="relative z-10">
         {/* Section 1: Crew Selector — centerpiece */}
         <Section eyebrow="01 · Crew Selector">
-          <div data-section="crew">
+          <div id="crew-sandbox">
             <CrewSelector />
           </div>
         </Section>

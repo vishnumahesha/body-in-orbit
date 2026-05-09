@@ -1,18 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-interface MissionStartProps {
-  onBegin: () => void;
-}
-
-export function MissionStart({ onBegin }: MissionStartProps) {
-  const handleBegin = () => {
-    onBegin();
-    setTimeout(() => {
-      window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-    }, 100);
-  };
+export function MissionStart() {
 
   return (
     <section className="min-h-screen w-full relative overflow-hidden bg-transparent flex flex-col items-center justify-center text-center px-6 pointer-events-none">
@@ -60,25 +51,35 @@ export function MissionStart({ onBegin }: MissionStartProps) {
           space changes inside the body, one crew member at a time.
         </motion.p>
 
-        {/* CTA Button */}
-        <motion.button
+        {/* CTA */}
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          onClick={handleBegin}
-          className="group relative inline-flex items-center gap-3 border border-[#06B6D4]/30 text-[#06B6D4] px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-mono text-xs sm:text-sm tracking-[0.15em] uppercase hover:bg-[#06B6D4]/5 hover:border-[#06B6D4]/60 hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.15)] transition-all duration-500 cursor-pointer pointer-events-auto"
+          className="flex flex-col items-center gap-4 pointer-events-auto"
         >
-          <span>Begin Mission Briefing</span>
-          <svg
-            className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
+          <Link
+            href="/mission-summary"
+            className="group relative inline-flex items-center gap-3 border border-[#06B6D4]/30 text-[#06B6D4] px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-mono text-xs sm:text-sm tracking-[0.15em] uppercase hover:bg-[#06B6D4]/5 hover:border-[#06B6D4]/60 hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.15)] transition-all duration-500"
           >
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </motion.button>
+            <span>Begin Mission Briefing</span>
+            <svg
+              className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </Link>
+          <Link
+            href="/?skipIntro=1#crew-sandbox"
+            className="font-mono text-xs text-slate-500 hover:text-slate-300 underline underline-offset-4 transition-colors"
+          >
+            Skip story and open dashboard
+          </Link>
+        </motion.div>
 
         {/* Disclaimer */}
         <motion.div
