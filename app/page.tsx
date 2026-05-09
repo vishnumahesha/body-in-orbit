@@ -20,6 +20,7 @@ import { SampleCoverageMatrix } from "@/components/coverage/SampleCoverageMatrix
 import { MonitoringPlanner } from "@/components/planner/MonitoringPlanner";
 import { VoiceDebrief } from "@/components/voice/VoiceDebrief";
 import { PrintableBiobrief } from "@/components/biobrief/PrintableBiobrief";
+import { PersonalDebrief } from "@/components/debrief/PersonalDebrief";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -147,8 +148,19 @@ function HomeContent() {
             </div>
           </Section>
 
-          {/* Section 4: Evidence drawers */}
-          <Section eyebrow="04 · Evidence receipts">
+          {/* Section 4: Personal debrief */}
+          <Section eyebrow="04 · Personal debrief">
+            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-2">
+              What this means for the crew member it&apos;s addressed to.
+            </h2>
+            <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-10">
+              Switch crew above to read each member&apos;s personal readout.
+            </p>
+            <PersonalDebrief />
+          </Section>
+
+          {/* Section 5: Evidence drawers */}
+          <Section eyebrow="05 · Evidence receipts">
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-3">
               Every domain card opens its receipts.
             </h2>
@@ -160,16 +172,16 @@ function HomeContent() {
             <EvidenceDrawers />
           </Section>
 
-          {/* Section 5: Sample coverage matrix */}
-          <Section eyebrow="05 · Coverage matrix">
+          {/* Section 6: Sample coverage matrix */}
+          <Section eyebrow="06 · Coverage matrix">
             <p className="font-inter text-base text-[#94A3B8] max-w-2xl mb-8 leading-relaxed">
               This grid shows what was actually sampled. Empty cells are not design gaps; they mark where that data layer was not collected.
             </p>
             <SampleCoverageMatrix />
           </Section>
 
-          {/* Section 6: Communication Safety Check */}
-          <Section eyebrow="06 · Communication Safety Check">
+          {/* Section 7: Communication Safety Check */}
+          <Section eyebrow="07 · Communication Safety Check">
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-6">
               The hardest part is not seeing the signal.{" "}
               <span className="text-[#94A3B8]">It is knowing what the signal does not prove.</span>
@@ -177,23 +189,23 @@ function HomeContent() {
             <ClaimCourt />
           </Section>
 
-          {/* Section 7: Monitoring planner */}
-          <Section eyebrow="07 · Monitoring planner">
+          {/* Section 8: Monitoring planner */}
+          <Section eyebrow="08 · Monitoring planner">
             <MonitoringPlanner />
           </Section>
 
-          {/* Section 8: Voice debrief */}
-          <Section eyebrow="08 · Voice debrief">
+          {/* Section 9: Voice debrief */}
+          <Section eyebrow="09 · Voice debrief">
             <VoiceDebrief />
           </Section>
 
-          {/* Section 9: Printable biobrief */}
-          <Section eyebrow="09 · Printable biobrief">
+          {/* Section 10: Printable biobrief */}
+          <Section eyebrow="10 · Printable biobrief">
             <PrintableBiobrief />
           </Section>
 
-          {/* Section 10: Closing */}
-          <Section eyebrow="10 · Boundary">
+          {/* Section 11: Closing */}
+          <Section eyebrow="11 · Boundary">
             <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-6">
               A responsible report knows where to stop.
             </h2>
