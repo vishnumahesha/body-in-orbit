@@ -157,12 +157,17 @@ function HomeContent() {
           {/* Section 3: Animated radial chart */}
           <Section eyebrow="03 · Domain readout">
             <BriefingHeader />
-            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mt-3 mb-10">
+            <div className="font-mono text-xs tracking-[0.2em] text-cyan-400 mb-2 mt-3">
+              THE LIVING BASELINE · TRACK 3 SIGNATURE FIGURE
+            </div>
+            <h2 className="font-space-grotesk text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-10">
               Five domains.{" "}
               <span className="text-[#06B6D4]">Six mission phases.</span>{" "}
               Watch the body move.
             </h2>
-            <RadialChartWithExplanation />
+            <div data-export="radial-section">
+              <RadialChartWithExplanation />
+            </div>
           </Section>
 
           {/* Section 4: Evidence drawers */}

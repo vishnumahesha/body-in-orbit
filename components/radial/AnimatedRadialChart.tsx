@@ -5,10 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { domains } from "@/data/domains";
 import type { DomainId, MissionPhase } from "@/data/types";
 import { useCrew } from "@/lib/crewContext";
+import { SmallMultiplesRow } from "./MiniPhaseChart";
 
 const PHASES: { id: MissionPhase; label: string; sub: string }[] = [
   { id: "baseline", label: "Baseline", sub: "L−92 to L−3" },
-  { id: "inflight", label: "In-flight", sub: "FD1 – FD3" },
+  { id: "inflight", label: "In-flight", sub: "FD2 – FD3" },
   { id: "r_plus_1", label: "R+1", sub: "Day after landing" },
   { id: "r_plus_45", label: "R+45", sub: "Six weeks post" },
   { id: "r_plus_82", label: "R+82", sub: "Twelve weeks post" },
@@ -54,6 +55,18 @@ export function AnimatedRadialChart({
   };
 
   const domainArray = useMemo(() => Object.values(domains), []);
+
+  // baseline ghost — always phase "baseline", no crew overrides (scores are all 0 by definition)
+  const baselinePoints = useMemo(
+    () =>
+      domainArray.map((domain) => {
+        const v = domain.visualStates["baseline"];
+        const score = v.perturbationScore as 0 | 1 | 2 | 3;
+        const { x, y } = polar(domain.angleDeg, scoreToRadius(score));
+        return { x, y };
+      }),
+    [domainArray]
+  );
 
   // build per-crew override
   const adjustedPoints = domainArray.map((domain) => {
@@ -235,7 +248,16 @@ export function AnimatedRadialChart({
           </circle>
           <circle cx={CENTER} cy={CENTER} r={3} fill="#06B6D4" />
 
-          {/* shape polygon */}
+          {/* baseline ghost — always shown, never animates */}
+          <polygon
+            points={baselinePoints.map((p) => `${p.x},${p.y}`).join(" ")}
+            fill="rgba(100,116,139,0.08)"
+            stroke="#64748B"
+            strokeWidth={1}
+            strokeDasharray="4 3"
+          />
+
+          {/* active-phase polygon */}
           <motion.polygon
             points={adjustedPoints.map((p) => `${p.x},${p.y}`).join(" ")}
             fill="rgba(6, 182, 212, 0.08)"
@@ -324,6 +346,19 @@ export function AnimatedRadialChart({
           >
             PRE-FLIGHT BASELINE
           </text>
+
+          {/* legend */}
+          <text
+            x={CENTER}
+            y={SVG_SIZE - 10}
+            textAnchor="middle"
+            fill="#475569"
+            fontSize="9"
+            fontFamily="IBM Plex Mono, monospace"
+            letterSpacing="0.12em"
+          >
+            BASELINE (DASHED) · ACTIVE PHASE (SOLID)
+          </text>
         </svg>
 
         <AnimatePresence mode="wait">
@@ -366,6 +401,14 @@ export function AnimatedRadialChart({
         </span>
         <span>distance from center = perturbation score, not severity</span>
       </div>
+
+      <SmallMultiplesRow
+        activePhase={phase}
+        onPhaseSelect={(p) => {
+          setAutoplay(false);
+          setPhase(p);
+        }}
+      />
     </div>
   );
 }
