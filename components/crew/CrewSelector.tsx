@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useCrew } from "@/lib/crewContext";
-import { UnicornScene } from "./UnicornScene";
+import Image from "next/image";
 
 const colorByDomainId: Record<string, string> = {
   immune: "#22D3EE",
@@ -13,10 +13,10 @@ const colorByDomainId: Record<string, string> = {
 };
 
 const portraitMap: Record<string, string> = {
-  C001: "cNfmqREQbl0Ef3oTF0Kb",
-  C002: "6JulkxqiM1AkcRNtpiN8",
-  C003: "euUnpkad5Ae5ctmf5KTj",
-  C004: "32Fm5JxcdDIPZV5CDlyd",
+  C001: "/crew/c001.png",
+  C002: "/crew/c002.png",
+  C003: "/crew/c003.png",
+  C004: "/crew/c004.png",
 };
 
 function CrewBadge({ id, isActive }: { id: string; isActive: boolean }) {
@@ -108,10 +108,13 @@ export function CrewSelector() {
               />
 
               {portraitId && (
-                <div className="aspect-[3/4] w-full overflow-hidden rounded-lg mb-10 bg-black">
-                  <UnicornScene
-                    projectId={portraitId}
-                    fallbackLabel={p.displayLabel}
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg mb-4 bg-black">
+                  <Image
+                    src={portraitId}
+                    alt={p.displayLabel}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover"
                   />
                 </div>
               )}
