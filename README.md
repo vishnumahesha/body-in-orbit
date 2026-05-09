@@ -13,7 +13,7 @@ The live experience opens with a monitor-style mission console, then routes into
 
 ## Headline Finding
 
-> **The astronaut landed in three days. The biology did not land all at once.**
+> **The crew landed in three days. The biology did not land all at once.**
 
 Across the Inspiration4 crew (n=4), molecular signals shifted in five biological domains and recovered at five different rates. Some markers returned toward baseline by R+82. Others remained perturbed at R+194. The hardest part of communicating this data is not finding signals — it is communicating what they do, and do not, prove.
 
@@ -158,14 +158,21 @@ npm run dev
 
 ## AI Usage
 
-Claude (Anthropic) was used as a tool for:
-- Translating technical findings into astronaut-facing language
-- Auditing every astronaut-facing line against the forbidden-terms list
-- Building interactive UI components
+AI was used throughout the project as a development, writing, and review partner. The goal was not to let AI invent conclusions, but to help move faster while keeping the science readable and careful.
 
-Claude was used to draft and audit interface language, but biological claims were constrained to the evidence ledger, OSDR datasets, and cited SOMA papers.
+Claude and ChatGPT helped with three main parts of the project:
 
-Every score and every claim traces to a published OSDR dataset and a peer-reviewed paper. AI did not introduce conclusions the source data did not already support.
+- turning technical biology terms into language a non-specialist could understand
+- checking the site's wording so research signals did not sound like diagnoses, predictions, or medical clearance
+- building and refining the React / Next.js interface under hackathon time constraints
+
+This mattered because the project is not only about showing Inspiration4 molecular data. It is about showing how that data can be communicated responsibly. A lot of the work was asking: "Does this sentence sound too certain?" "Does this imply causation?" "Would a crew member understand this without being misled?"
+
+AI helped draft and revise interface copy for evidence receipts, claim boundaries, monitoring explanations, the mission summary, and the voice debrief scripts. It also helped generate and debug components for the crew selector, charts, claim review flow, and printable BioBrief.
+
+AI did not decide the biological findings. The scientific claims were constrained by the OSDR datasets, published SOMA papers, the evidence ledger, and the project's claim-boundary rules. When a claim went beyond what the data could support, it was either softened, moved into a monitoring category, or rejected as an overclaim.
+
+In practice, AI was used the same way the site asks users to use data: as a tool for translation and review, not as a source of unchecked certainty.
 
 ---
 
